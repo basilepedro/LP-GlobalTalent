@@ -331,7 +331,7 @@ Antes de publicar: trocar https://SEUDOMINIO pela URL final da pagina nas tags o
       "name": "Amorim Global",
       "url": "https://www.amorimglobal.com",
       "logo": "https://cdn.prod.website-files.com/669b5fced1bf20317562ea9d/682de16eb789298506f9ba30_ISOTIPO%20-%2032X32-02.png",
-      "description": "Hub 360º de internacionalização para pessoas, famílias e empresas, com soluções migratórias, fiscais e patrimoniais.",
+      "description": "Hub 360 de internacionalização para pessoas, famílias e empresas, com soluções migratórias, fiscais e patrimoniais.",
       "areaServed": ["BR", "GB", "US"],
       "knowsLanguage": ["pt", "en"],
       "contactPoint": {
@@ -1860,7 +1860,7 @@ a.button.do.w-button:hover {
 /* Panel inner: 2 cols */
 .lps-pathways-v2_panel-inner {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 320px;
   gap: 2.5rem;
   background: #f7f9ff;
   border: 1px solid #e2e6f0;
@@ -2086,16 +2086,15 @@ a.button.do.w-button:hover {
   border: none !important;
   border-right: 1px solid rgba(18,25,61,0.12) !important;
   border-radius: 0 !important;
-  padding: 0.5rem 1.25rem !important;
+  padding: 0.5rem 2.5rem 0.5rem 0 !important;
   box-shadow: none !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
+  align-items: flex-start !important;
   contain: layout;
 }
 .lps-stats_item:first-child {
-  padding-left: 1.25rem !important;
+  padding-left: 0 !important;
 }
 .lps-stats_item:last-child {
   border-right: none !important;
@@ -2132,8 +2131,6 @@ a.button.do.w-button:hover {
   font-size: 0.8125rem !important;
   line-height: 1.5 !important;
   max-width: 18ch;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 
@@ -2815,8 +2812,6 @@ a.button.do.w-button:hover {
 
 /* 7. WhatsApp link -> brand green (was #25D366). */
 .lps-form_form-whatsapp .link-2 { color: #2FCC64 !important; }
-/* 7b. Fecha o vao grande entre o botao do form e o bloco WhatsApp (margin do Webflow). */
-.lps-form_form-whatsapp { margin-top: 1.5rem !important; }
 
 /* 8. Timeline: reveal the first line of each step at rest, expand on hover.
       Purely CSS; no markup added inside the Swiper slides. */
@@ -3351,7 +3346,7 @@ a.button.do.w-button:hover {
 .lps-form_content-left .lps-stats_item {
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
+  align-items: flex-start !important;
   justify-content: flex-start !important;
   padding: 0 1.25rem !important;
   background: transparent !important;
@@ -3360,7 +3355,7 @@ a.button.do.w-button:hover {
   border-bottom: none !important;
   border-radius: 0 !important;
   position: relative;
-  text-align: center !important;
+  text-align: left !important;
 }
 .lps-form_content-left .lps-stats_item:first-child {
   padding-left: 0 !important;
@@ -3403,10 +3398,10 @@ a.button.do.w-button:hover {
   font-size: 0.9375rem !important;
   line-height: 1.6 !important;
   color: #4a5062 !important;
-  margin: 0 auto !important;
+  margin: 0 !important;
   max-width: none !important;
   padding-left: 0 !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 .lps-form_content-left .lps-stats_desc strong {
   color: #12193D !important;
@@ -4391,10 +4386,10 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
           </div>
           <div class="z-index-2" data-gsap="fade-up">
             <a href="#section-form" class="sc-primary-button w-inline-block">
-              <div class="button-text" data-lang-inline="pt">Avalie a sua elegibilidade</div>
-              <div class="button-text" lang="en" data-lang-inline="en">Assess your eligibility</div>
-              <div class="button-text abs" data-lang-inline="pt">Avalie a sua elegibilidade</div>
-              <div class="button-text abs" lang="en" data-lang-inline="en">Assess your eligibility</div>
+              <div class="button-text" data-lang-inline="pt">Quero meu visto Global Talent</div>
+              <div class="button-text" lang="en" data-lang-inline="en">I want my Global Talent visa</div>
+              <div class="button-text abs" data-lang-inline="pt">Quero meu visto Global Talent</div>
+              <div class="button-text abs" lang="en" data-lang-inline="en">I want my Global Talent visa</div>
               <div class="butt-arrow-wrp"><div class="button-arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M6 12.7278L10 8.72778L6 4.72778" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="button-arrow-embed abs w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M6 12.7278L10 8.72778L6 4.72778" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
             </a>
           </div>
@@ -4405,8 +4400,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
               <span lang="en" data-lang-inline="en">5.0 on Google</span>
             </a>
             <div class="lps-hero_trust-item">
-              <span data-lang-inline="pt">Hub 360º de internacionalização</span>
-              <span lang="en" data-lang-inline="en">360º internationalization hub</span>
+              <span data-lang-inline="pt">Hub 360 de internacionalização</span>
+              <span lang="en" data-lang-inline="en">360 internationalization hub</span>
             </div>
             <div class="lps-hero_trust-item">
               <span data-lang-inline="pt">Atendimento bilíngue, PT e EN</span>
@@ -4465,8 +4460,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 <div class="lps-stats_label" data-lang="pt">Países atendidos</div>
                 <div class="lps-stats_label" lang="en" data-lang="en">Countries served</div>
                 <div class="lps-stats_divider"></div>
-                <div class="lps-stats_desc" data-lang="pt">Um <strong>hub 360º</strong> de internacionalização: migratório, fiscal e patrimonial, em um só lugar.</div>
-                <div class="lps-stats_desc" lang="en" data-lang="en">A <strong>360º hub</strong> for going global: immigration, tax, and wealth, all in one place.</div>
+                <div class="lps-stats_desc" data-lang="pt">Um <strong>hub 360</strong> de internacionalização: migratório, fiscal e patrimonial, em um só lugar.</div>
+                <div class="lps-stats_desc" lang="en" data-lang="en">A <strong>360 hub</strong> for going global: immigration, tax, and wealth, all in one place.</div>
               </div>
               <div class="lps-stats_item">
                 <div class="lps-stats_number" data-countup data-value="300" data-prefix="+">+300</div>
@@ -4519,8 +4514,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 </div>
 
                 <!-- Campo de atuação. Qualifica a rota de endorsement do Global Talent -->
-                <div class="lps-form_question-label" data-lang="pt">Em qual campo está a sua trajetória?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">In which field is your track record?</div>
+                <div class="lps-form_question-label" data-lang="pt">Em qual campo está a sua trajetória de liderança?</div>
+                <div class="lps-form_question-label" lang="en" data-lang="en">In which field is your track record of leadership?</div>
                 <div class="lps-form_inputs-wrap">
                   <select name="Motivo" id="motivo-pt" required class="lps-form_input w-select" data-lang="pt" onchange="showConditionalFields(this.value, 'pt')">
                     <option value="">Selecione</option>
@@ -4603,6 +4598,46 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                     <option value="">Select</option>
                     <option value="Sim">Yes</option>
                     <option value="Nao">No</option>
+                  </select>
+                </div>
+
+                <!-- Reconhecimento da trajetoria. Sinal de elegibilidade do endorsement -->
+                <div class="lps-form_question-label" data-lang="pt">Como você descreveria o reconhecimento da sua trajetória hoje?</div>
+                <div class="lps-form_question-label" lang="en" data-lang="en">How would you describe the recognition of your track record today?</div>
+                <div class="lps-form_inputs-wrap">
+                  <select name="Reconhecimento" class="lps-form_input w-select" data-lang="pt">
+                    <option value="">Selecione</option>
+                    <option value="Lider reconhecido">Líder reconhecido no meu campo</option>
+                    <option value="Em ascensao">Em ascensão, com resultados expressivos</option>
+                    <option value="Premios e midia">Tenho prêmios, publicações ou destaque na mídia</option>
+                    <option value="Nao sei">Não tenho certeza</option>
+                  </select>
+                  <select name="Recognition" class="lps-form_input w-select" lang="en" data-lang="en">
+                    <option value="">Select</option>
+                    <option value="Lider reconhecido">A recognized leader in my field</option>
+                    <option value="Em ascensao">Rising, with significant results</option>
+                    <option value="Premios e midia">I have awards, publications, or media coverage</option>
+                    <option value="Nao sei">Not sure</option>
+                  </select>
+                </div>
+
+                <!-- Prazo. Liga ao calendario escolar e a urgencia -->
+                <div class="lps-form_question-label" data-lang="pt">Quando você pretende se mudar?</div>
+                <div class="lps-form_question-label" lang="en" data-lang="en">When do you plan to move?</div>
+                <div class="lps-form_inputs-wrap">
+                  <select name="Prazo" class="lps-form_input w-select" data-lang="pt">
+                    <option value="">Selecione</option>
+                    <option value="Ate 6 meses">Nos próximos 6 meses</option>
+                    <option value="6 a 12 meses">De 6 a 12 meses</option>
+                    <option value="Mais de 12 meses">Mais de 12 meses</option>
+                    <option value="Planejando">Ainda estou planejando</option>
+                  </select>
+                  <select name="Timeline" class="lps-form_input w-select" lang="en" data-lang="en">
+                    <option value="">Select</option>
+                    <option value="Ate 6 meses">In the next 6 months</option>
+                    <option value="6 a 12 meses">In 6 to 12 months</option>
+                    <option value="Mais de 12 meses">More than 12 months</option>
+                    <option value="Planejando">Still planning</option>
                   </select>
                 </div>
 
@@ -4703,16 +4738,16 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
   <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
     <div class="container-large">
       <div class="lps-benefits_header" data-gsap="fade-up">
-        <div class="tag">
+        <div data-wf--ui-lps-tag--variant="transparent" class="tag">
           <div class="tag_dot"></div>
-          <div class="tag_text" data-lang-inline="pt">UMA DECISÃO SÓ</div>
-          <div class="tag_text" lang="en" data-lang-inline="en">A SINGLE DECISION</div>
+          <div class="tag_text" data-lang-inline="pt">POR QUE O REINO UNIDO</div>
+          <div class="tag_text" lang="en" data-lang-inline="en">WHY THE UNITED KINGDOM</div>
           <div class="tag_dot"></div>
         </div>
         <h2 class="heading-style-h2" data-lang="pt">Por que o Reino Unido?</h2>
         <h2 class="heading-style-h2" lang="en" data-lang="en">Why the United Kingdom?</h2>
-        <p class="text-size-medium" data-lang="pt">Quem se antecipa olha para o Reino Unido por três motivos, e <strong>provavelmente um deles já passou pela sua cabeça mais de uma vez</strong>.</p>
-        <p class="text-size-medium" lang="en" data-lang="en">Those who plan ahead look to the United Kingdom for three reasons, and <strong>one of them has probably crossed your mind more than once</strong>.</p>
+        <p class="text-size-medium" data-lang="pt">Não é sobre sair do Brasil. É sobre ter mais de uma resposta pronta quando a vida pedir. Quem se antecipa olha para o Reino Unido por três motivos, e <strong>provavelmente um deles já passou pela sua cabeça mais de uma vez</strong>.</p>
+        <p class="text-size-medium" lang="en" data-lang="en">It is not about leaving Brazil. It is about having more than one answer ready when life asks for it. Those who plan ahead look to the United Kingdom for three reasons, and <strong>one of them has probably crossed your mind more than once</strong>.</p>
       </div>
       <div class="lps-layout3_grid lps-benefits_grid" data-gsap="stagger">
 
@@ -4725,8 +4760,10 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
           <div class="div-block-79" style="padding:24px;">
             <h3 class="heading-style-h5" data-lang="pt">Entre pela porta da sua própria liderança</h3>
             <h3 class="heading-style-h5" lang="en" data-lang="en">Enter through the door of your own leadership</h3>
-            <p class="text-size-regular" data-lang="pt">No Reino Unido, a sua trajetória vira passaporte: você é reconhecido pelo que já construiu, <strong>sem depender do patrocínio de uma empresa</strong>.</p>
-            <p class="text-size-regular" lang="en" data-lang="en">In the United Kingdom, your track record becomes a passport: you are recognised for what you have already built, <strong>without depending on a company to sponsor you</strong>.</p>
+            <p class="text-size-regular" data-lang="pt">A sua carreira está presa a um país só. No Reino Unido, a sua trajetória vira passaporte: você é reconhecido pelo que já construiu, <strong>sem depender do patrocínio de uma empresa</strong>.</p>
+            <p class="text-size-regular" lang="en" data-lang="en">Your career is tied to a single country. In the United Kingdom, your track record becomes a passport: you are recognised for what you have already built, <strong>without depending on a company to sponsor you</strong>.</p>
+            <p class="text-size-regular" data-lang="pt" style="font-size:13px;opacity:.68;margin-top:10px">O Global Talent é a rota que mantém a iniciativa com você, sem precisar de uma empresa patrocinadora, para líderes em tecnologia digital, pesquisa, artes e cultura.</p>
+            <p class="text-size-regular" lang="en" data-lang="en" style="font-size:13px;opacity:.68;margin-top:10px">Global Talent is the route that keeps the initiative with you, with no sponsor, for leaders in digital technology, research, the arts, and culture.</p>
           </div>
         </div>
 
@@ -4739,8 +4776,10 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
           <div class="div-block-79" style="padding:24px;">
             <h3 class="heading-style-h5" data-lang="pt">Ancore parte da vida em moeda forte</h3>
             <h3 class="heading-style-h5" lang="en" data-lang="en">Anchor part of your life in a strong currency</h3>
-            <p class="text-size-regular" data-lang="pt">A sua renda em outra moeda. Uma base no Reino Unido coloca <strong>parte do seu patrimônio em libra, com mais previsibilidade diante de um cenário incerto</strong>.</p>
-            <p class="text-size-regular" lang="en" data-lang="en">Your income in another currency. A base in the United Kingdom puts <strong>part of your wealth in pounds, with more predictability against an uncertain scenario</strong>.</p>
+            <p class="text-size-regular" data-lang="pt">A sua renda está presa a uma moeda só. Uma base no Reino Unido coloca <strong>parte do seu patrimônio em libra, com mais previsibilidade diante de um cenário incerto</strong>.</p>
+            <p class="text-size-regular" lang="en" data-lang="en">Your income is tied to a single currency. A base in the United Kingdom puts <strong>part of your wealth in pounds, with more predictability against an uncertain scenario</strong>.</p>
+            <p class="text-size-regular" data-lang="pt" style="font-size:13px;opacity:.68;margin-top:10px">Nos primeiros anos no Reino Unido, quem se planeja pode pagar menos imposto sobre a renda e os bens que mantém fora do país. Esse benefício tem regras de tempo, não é automático e precisa ser solicitado, por isso a parte fiscal entra no plano antes da mudança. A residência permanente pode vir em três ou cinco anos, conforme o seu caso.</p>
+            <p class="text-size-regular" lang="en" data-lang="en" style="font-size:13px;opacity:.68;margin-top:10px">In the first years in the United Kingdom, those who plan ahead can pay less tax on the income and assets they keep outside the country. This benefit has timing rules, is not automatic and must be claimed, which is why the tax side enters the plan before the move. Permanent residence can come in three or five years, depending on your case.</p>
           </div>
         </div>
 
@@ -4755,13 +4794,15 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
             <h3 class="heading-style-h5" lang="en" data-lang="en">The family you have, or the one you will build</h3>
             <p class="text-size-regular" data-lang="pt">O futuro da sua família ganha o mundo como horizonte. Com filhos, a mudança se planeja <strong>a favor do calendário escolar</strong>. Sem filhos ainda, é o momento mais leve para ir e construir a família já lá, com saúde e educação de alto padrão.</p>
             <p class="text-size-regular" lang="en" data-lang="en">Your family's future gains the world as its horizon. With children, the move is planned <strong>around the school calendar</strong>. Without children yet, it is the lightest moment to go and build your family there, with high quality healthcare and education.</p>
+            <p class="text-size-regular" data-lang="pt" style="font-size:13px;opacity:.68;margin-top:10px">As escolas britânicas têm calendário próprio de admissão, e a vaga depende muito da região onde você vai morar. Quem planeja com antecedência escolhe a escola, quem deixa para depois aceita o que sobra.</p>
+            <p class="text-size-regular" lang="en" data-lang="en" style="font-size:13px;opacity:.68;margin-top:10px">British schools have their own admissions calendar, and a place depends a lot on the area where you will live. Those who plan ahead choose the school, those who wait take what is left.</p>
           </div>
         </div>
 
       </div>
-      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px;align-items:center;text-align:center;margin-left:auto;margin-right:auto">
-        <p class="text-size-medium" data-lang="pt">Carreira, patrimônio e família: hoje, tudo isso depende de um cenário só. <strong>A Amorim trata as três frentes como uma decisão só, porque é um <span class="gt-hl">hub 360º</span>.</strong></p>
-        <p class="text-size-medium" lang="en" data-lang="en">Career, wealth and family: today, all of it depends on a single scenario. <strong>Amorim treats the three fronts as a single decision, because it is a <span class="gt-hl">360º hub</span>.</strong></p>
+      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px">
+        <p class="text-size-medium" data-lang="pt">Carreira, patrimônio e família: hoje, tudo isso depende de um cenário só. <strong>A Amorim trata as três frentes como uma decisão só, porque é um <span class="gt-hl">hub 360</span>.</strong></p>
+        <p class="text-size-medium" lang="en" data-lang="en">Career, wealth and family: today, all of it depends on a single scenario. <strong>Amorim treats the three fronts as a single decision, because it is a <span class="gt-hl">360 hub</span>.</strong></p>
       </div>
     </div>
   </div>
@@ -4803,18 +4844,16 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 ════════════════════════════════════════ -->
 <style>
 .gt-oque{background:#fff;}
-.gt-oque_inner{display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:start;}
+.gt-oque_inner{max-width:1180px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:start;}
 .gt-oque_text .tag_text{color:#004DFF !important;}
 .gt-oque_text h2{color:#12193D !important;margin:18px 0 0;}
-.gt-oque_text p{color:#4a5062 !important;font-size:1.08rem;line-height:1.65;font-weight:400;margin:14px 0 0;}
+.gt-oque_text p{color:#4a5062 !important;font-size:1.08rem;line-height:1.7;font-weight:400;margin:18px 0 0;}
 .gt-oque_media{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;max-height:520px;background:#042C53;}
 .gt-oque_media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-@media(max-width:860px){.gt-oque_inner{grid-template-columns:1fr;gap:32px;}.gt-oque_media{aspect-ratio:16/10;max-height:none;}}
+@media(max-width:860px){.gt-oque_inner{grid-template-columns:1fr;gap:32px;padding:64px 20px;}.gt-oque_media{aspect-ratio:16/10;max-height:none;}}
 </style>
 <div class="gt-oque">
-  <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
-    <div class="container-large">
-      <div class="gt-oque_inner">
+  <div class="gt-oque_inner">
     <div class="gt-oque_text" data-gsap="fade-up">
       <div class="tag">
         <div class="tag_dot"></div>
@@ -4834,8 +4873,6 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
     <!-- PLACEHOLDER: trocar pela foto definitiva do Reino Unido -->
     <div class="gt-oque_media" data-gsap="fade-up">
       <img src="https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=1100&q=80" alt="Reino Unido, Londres" loading="lazy"/>
-    </div>
-      </div>
     </div>
   </div>
 </div>
@@ -4915,6 +4952,34 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 <li lang="en" data-lang="en">Has market recognition: awards, funding or press</li>
               </ul>
             </div>
+            <div class="lps-pathways-v2_panel-meta">
+              <div class="lps-pathways-v2_meta-item">
+                <div class="lps-pathways-v2_meta-label" data-lang="pt">Patrocinador</div>
+                <div class="lps-pathways-v2_meta-label" lang="en" data-lang="en">Sponsor</div>
+                <div class="lps-pathways-v2_meta-value" data-lang="pt">Não exige oferta de emprego</div>
+                <div class="lps-pathways-v2_meta-value" lang="en" data-lang="en">No job offer required</div>
+              </div>
+              <div class="lps-pathways-v2_meta-item">
+                <div class="lps-pathways-v2_meta-label" data-lang="pt">Caminho para a residência</div>
+                <div class="lps-pathways-v2_meta-label" lang="en" data-lang="en">Path to residency</div>
+                <div class="lps-pathways-v2_meta-value" data-lang="pt">ILR em 3 ou 5 anos, conforme o enquadramento</div>
+                <div class="lps-pathways-v2_meta-value" lang="en" data-lang="en">ILR in 3 or 5 years, depending on the route</div>
+              </div>
+              <div class="lps-pathways-v2_meta-item">
+                <div class="lps-pathways-v2_meta-label" data-lang="pt">O que mais pesa</div>
+                <div class="lps-pathways-v2_meta-label" lang="en" data-lang="en">What matters most</div>
+                <div class="lps-pathways-v2_meta-value lps-pathways-v2_complexity">
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_meta-txt" data-lang="pt">A narrativa do endosso</span>
+                  <span class="lps-pathways-v2_meta-txt" lang="en" data-lang="en">The endorsement narrative</span>
+                </div>
+              </div>
+              <a href="#section-form" class="button-primary lps-pathways-v2_cta w-button" data-lang="pt">Verificar meu enquadramento</a>
+              <a href="#section-form" class="button-primary lps-pathways-v2_cta w-button" lang="en" data-lang="en">Check where I fit</a>
+            </div>
           </div>
         </div>
 
@@ -4937,6 +5002,34 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 <li lang="en" data-lang="en">Holds grants, awards, specialisations or reference positions</li>
               </ul>
             </div>
+            <div class="lps-pathways-v2_panel-meta">
+              <div class="lps-pathways-v2_meta-item">
+                <div class="lps-pathways-v2_meta-label" data-lang="pt">Patrocinador</div>
+                <div class="lps-pathways-v2_meta-label" lang="en" data-lang="en">Sponsor</div>
+                <div class="lps-pathways-v2_meta-value" data-lang="pt">Não exige oferta de emprego</div>
+                <div class="lps-pathways-v2_meta-value" lang="en" data-lang="en">No job offer required</div>
+              </div>
+              <div class="lps-pathways-v2_meta-item">
+                <div class="lps-pathways-v2_meta-label" data-lang="pt">Caminho para a residência</div>
+                <div class="lps-pathways-v2_meta-label" lang="en" data-lang="en">Path to residency</div>
+                <div class="lps-pathways-v2_meta-value" data-lang="pt">ILR em 3 ou 5 anos, conforme o enquadramento</div>
+                <div class="lps-pathways-v2_meta-value" lang="en" data-lang="en">ILR in 3 or 5 years, depending on the route</div>
+              </div>
+              <div class="lps-pathways-v2_meta-item">
+                <div class="lps-pathways-v2_meta-label" data-lang="pt">O que mais pesa</div>
+                <div class="lps-pathways-v2_meta-label" lang="en" data-lang="en">What matters most</div>
+                <div class="lps-pathways-v2_meta-value lps-pathways-v2_complexity">
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_meta-txt" data-lang="pt">A narrativa do endosso</span>
+                  <span class="lps-pathways-v2_meta-txt" lang="en" data-lang="en">The endorsement narrative</span>
+                </div>
+              </div>
+              <a href="#section-form" class="button-primary lps-pathways-v2_cta w-button" data-lang="pt">Verificar meu enquadramento</a>
+              <a href="#section-form" class="button-primary lps-pathways-v2_cta w-button" lang="en" data-lang="en">Check where I fit</a>
+            </div>
           </div>
         </div>
 
@@ -4958,6 +5051,34 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 <li data-lang="pt">Possui presença consolidada no seu campo</li>
                 <li lang="en" data-lang="en">Has an established presence in your field</li>
               </ul>
+            </div>
+            <div class="lps-pathways-v2_panel-meta">
+              <div class="lps-pathways-v2_meta-item">
+                <div class="lps-pathways-v2_meta-label" data-lang="pt">Patrocinador</div>
+                <div class="lps-pathways-v2_meta-label" lang="en" data-lang="en">Sponsor</div>
+                <div class="lps-pathways-v2_meta-value" data-lang="pt">Não exige oferta de emprego</div>
+                <div class="lps-pathways-v2_meta-value" lang="en" data-lang="en">No job offer required</div>
+              </div>
+              <div class="lps-pathways-v2_meta-item">
+                <div class="lps-pathways-v2_meta-label" data-lang="pt">Caminho para a residência</div>
+                <div class="lps-pathways-v2_meta-label" lang="en" data-lang="en">Path to residency</div>
+                <div class="lps-pathways-v2_meta-value" data-lang="pt">ILR em 3 ou 5 anos, conforme o enquadramento</div>
+                <div class="lps-pathways-v2_meta-value" lang="en" data-lang="en">ILR in 3 or 5 years, depending on the route</div>
+              </div>
+              <div class="lps-pathways-v2_meta-item">
+                <div class="lps-pathways-v2_meta-label" data-lang="pt">O que mais pesa</div>
+                <div class="lps-pathways-v2_meta-label" lang="en" data-lang="en">What matters most</div>
+                <div class="lps-pathways-v2_meta-value lps-pathways-v2_complexity">
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_dot is-on"></span>
+                  <span class="lps-pathways-v2_meta-txt" data-lang="pt">A narrativa do endosso</span>
+                  <span class="lps-pathways-v2_meta-txt" lang="en" data-lang="en">The endorsement narrative</span>
+                </div>
+              </div>
+              <a href="#section-form" class="button-primary lps-pathways-v2_cta w-button" data-lang="pt">Verificar meu enquadramento</a>
+              <a href="#section-form" class="button-primary lps-pathways-v2_cta w-button" lang="en" data-lang="en">Check where I fit</a>
             </div>
           </div>
         </div>
@@ -5036,7 +5157,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 
 
 <!-- ════════════════════════════════════════
-     LAYOUT 2, POR QUE A AMORIM (reforça o diferencial hub 360º do bloco 7)
+     LAYOUT 2, POR QUE A AMORIM (reforça o diferencial hub 360 do bloco 7)
 ════════════════════════════════════════ -->
 <div class="section_lps-layout2">
   <img class="amorim-curve is-tr" src="https://cdn.prod.website-files.com/669b5fced1bf20317562ea9d/69121320471ae07098a1250f_line-8.svg" alt="" aria-hidden="true" loading="lazy"/>
@@ -5051,7 +5172,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
               <div class="tag_text" lang="en" data-lang-inline="en">WHY AMORIM</div>
               <div class="tag_dot"></div>
             </div>
-            <h2 class="heading-style-h2" data-lang="pt">Um hub 360º de internacionalização. Da decisão de mudar à sua vida no Reino Unido.</h2>
+            <h2 class="heading-style-h2" data-lang="pt">Um hub 360 de internacionalização. Da decisão de mudar à sua vida no Reino Unido.</h2>
             <h2 class="heading-style-h2" lang="en" data-lang="en">A 360º internationalization hub. From the decision to move to your life in the United Kingdom.</h2>
             <p class="text-size-medium lps-layout2-sub" data-lang="pt">A maioria te entrega um visto e some. A Amorim conduz a mudança inteira, do primeiro diagnóstico à sua vida montada no Reino Unido. Você não contrata um visto, você contrata previsibilidade.</p>
             <p class="text-size-medium lps-layout2-sub" lang="en" data-lang="en">Most hand you a visa and disappear. Amorim runs the entire move, from the first assessment to your life set up in the United Kingdom. You are not hiring a visa, you are hiring predictability.</p>
@@ -5236,8 +5357,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
           </div>
           <h2 class="heading-style-h2" data-lang="pt">O que acontece depois do endosso</h2>
           <h2 class="heading-style-h2" lang="en" data-lang="en">What happens after the endorsement</h2>
-          <p class="text-size-medium" data-lang="pt"><span class="gt-hl" style="background:#2FCC64;color:#12193D;">Você conseguiu.</span> O endosso é o reconhecimento oficial de que você é um talento que o Reino Unido quer receber. A partir dele, basta dar entrada no visto dentro do prazo e o caminho para viver e trabalhar no país está aberto. Daqui pra frente, a mudança deixa de ser plano e vira a sua nova rotina.</p>
-          <p class="text-size-medium" lang="en" data-lang="en"><span class="gt-hl" style="background:#2FCC64;color:#12193D;">You made it.</span> The endorsement is official recognition that you are a talent the United Kingdom wants to welcome. From there, you simply file the visa application within the deadline and the path to live and work in the country is open. From here on, the move stops being a plan and becomes your new everyday life.</p>
+          <p class="text-size-medium" data-lang="pt">Você conseguiu. O endosso é o reconhecimento oficial de que você é um talento que o Reino Unido quer receber. A partir dele, basta dar entrada no visto dentro do prazo e o caminho para viver e trabalhar no país está aberto. Daqui pra frente, a mudança deixa de ser plano e vira a sua nova rotina.</p>
+          <p class="text-size-medium" lang="en" data-lang="en">You made it. The endorsement is official recognition that you are a talent the United Kingdom wants to welcome. From there, you simply file the visa application within the deadline and the path to live and work in the country is open. From here on, the move stops being a plan and becomes your new everyday life.</p>
         </div>
 
         <div class="gt-after_carousel">
@@ -5358,7 +5479,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 .gt-custo_grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .gt-custo_card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 2rem; display: flex; flex-direction: column; }
 .gt-custo_card.is-amorim { border-color: #004DFF; box-shadow: 0 12px 32px rgba(0,77,255,0.08); }
-.gt-custo_icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem; align-self: center; }
+.gt-custo_icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem; }
 .gt-custo_card .gt-custo_icon { background: #EEF2FF; color: #004DFF; }
 .gt-custo_eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: #004DFF; font-weight: 600; margin-bottom: 0.4rem; }
 .gt-custo_card h3 { margin: 0 0 0.75rem; font-size: 1.25rem; color: #001A4D; }
@@ -5376,7 +5497,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
     <div class="container-large">
       <div class="gt-custo_inner" data-gsap="fade-up">
         <div class="gt-custo_head">
-          <div class="tag" style="margin:0 auto;width:fit-content;">
+          <div class="tag" style="margin:0 auto;">
             <div class="tag_dot"></div>
             <div class="tag_text" data-lang-inline="pt">investimento</div>
             <div class="tag_text" lang="en" data-lang-inline="en">investment</div>
@@ -5442,7 +5563,6 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 ════════════════════════════════════════ -->
 <style>
 .gt-midcta { background: #F6F8FC; }
-.gt-midcta .lps-padding-vertical-copy2 { padding-top: 0 !important; }
 .gt-midcta_bar { max-width: 60rem; margin: 0 auto; background: #001A4D; border-radius: 1.25rem; padding: 1.75rem 2.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 .gt-midcta_text h3 { color: #FFFFFF; margin: 0 0 0.35rem; font-size: 1.35rem; }
 .gt-midcta_text p { color: #B9C6E6; margin: 0; font-size: 0.95rem; }
@@ -6487,7 +6607,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 <rect width="241" height="41" fill="white"/>
 </clipPath>
 </defs>
-</svg></div></a><div class="text-size-medium"><span data-lang-inline="pt">Hub 360º de internacionalização para pessoas e empresas.</span><span lang="en" data-lang-inline="en">A 360º internationalization hub for individuals and businesses.</span></div><a href="#section-form" class="custom-button-wrp w-inline-block"><div class="buttom-text-wrp"><div class="button-text">Fale com especialista</div><div class="button-text abs">Fale com especialista</div></div><div class="button-arrow-wrp"><div class="button-arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 25 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+</svg></div></a><div class="text-size-medium"><span data-lang-inline="pt">Hub 360 de internacionalização para pessoas e empresas.</span><span lang="en" data-lang-inline="en">A 360º internationalization hub for individuals and businesses.</span></div><a href="#section-form" class="custom-button-wrp w-inline-block"><div class="buttom-text-wrp"><div class="button-text">Fale com especialista</div><div class="button-text abs">Fale com especialista</div></div><div class="button-arrow-wrp"><div class="button-arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 25 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
 <path d="M13.2101 17.7102L18.2101 12.7102C18.3011 12.6151 18.3725 12.5029 18.4201 12.3802C18.5201 12.1367 18.5201 11.8636 18.4201 11.6202C18.3725 11.4974 18.3011 11.3853 18.2101 11.2902L13.2101 6.29019C13.1169 6.19695 13.0062 6.12299 12.8844 6.07253C12.7625 6.02207 12.632 5.99609 12.5001 5.99609C12.2338 5.99609 11.9784 6.10188 11.7901 6.29019C11.6018 6.47849 11.496 6.73388 11.496 7.00019C11.496 7.26649 11.6018 7.52188 11.7901 7.71019L15.0901 11.0002L7.5001 11.0002C7.23489 11.0002 6.98053 11.1055 6.793 11.2931C6.60546 11.4806 6.5001 11.735 6.5001 12.0002C6.5001 12.2654 6.60546 12.5198 6.793 12.7073C6.98053 12.8948 7.23489 13.0002 7.5001 13.0002L15.0901 13.0002L11.7901 16.2902C11.6964 16.3831 11.622 16.4937 11.5712 16.6156C11.5204 16.7375 11.4943 16.8682 11.4943 17.0002C11.4943 17.1322 11.5204 17.2629 11.5712 17.3848C11.622 17.5066 11.6964 17.6172 11.7901 17.7102C11.8831 17.8039 11.9937 17.8783 12.1155 17.9291C12.2374 17.9798 12.3681 18.006 12.5001 18.006C12.6321 18.006 12.7628 17.9798 12.8847 17.9291C13.0065 17.8783 13.1171 17.8039 13.2101 17.7102Z" fill="currentColor"/>
 </svg></div><div class="button-arrow-embed abs w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 25 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
 <path d="M13.2101 17.7102L18.2101 12.7102C18.3011 12.6151 18.3725 12.5029 18.4201 12.3802C18.5201 12.1367 18.5201 11.8636 18.4201 11.6202C18.3725 11.4974 18.3011 11.3853 18.2101 11.2902L13.2101 6.29019C13.1169 6.19695 13.0062 6.12299 12.8844 6.07253C12.7625 6.02207 12.632 5.99609 12.5001 5.99609C12.2338 5.99609 11.9784 6.10188 11.7901 6.29019C11.6018 6.47849 11.496 6.73388 11.496 7.00019C11.496 7.26649 11.6018 7.52188 11.7901 7.71019L15.0901 11.0002L7.5001 11.0002C7.23489 11.0002 6.98053 11.1055 6.793 11.2931C6.60546 11.4806 6.5001 11.735 6.5001 12.0002C6.5001 12.2654 6.60546 12.5198 6.793 12.7073C6.98053 12.8948 7.23489 13.0002 7.5001 13.0002L15.0901 13.0002L11.7901 16.2902C11.6964 16.3831 11.622 16.4937 11.5712 16.6156C11.5204 16.7375 11.4943 16.8682 11.4943 17.0002C11.4943 17.1322 11.5204 17.2629 11.5712 17.3848C11.622 17.5066 11.6964 17.6172 11.7901 17.7102C11.8831 17.8039 11.9937 17.8783 12.1155 17.9291C12.2374 17.9798 12.3681 18.006 12.5001 18.006C12.6321 18.006 12.7628 17.9798 12.8847 17.9291C13.0065 17.8783 13.1171 17.8039 13.2101 17.7102Z" fill="currentColor"/>
@@ -6936,12 +7056,12 @@ if (_CountUpLib && 'IntersectionObserver' in window) {
 /* ── 1 · BENEFITS: secao navy (segmentacao escolhida pelo Pedro), cards brancos no padrao layout3, icones no circulo ── */
 .section_lps-benefits { background: #FFFFFF; position: relative; overflow: hidden; }
 .lps-benefits-decor { display: none; }
-.lps-benefits_header { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 0.75rem; margin: 0 0 2.5rem; max-width: 760px; }
+.lps-benefits_header { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.75rem; margin: 0 auto 2.5rem; max-width: 760px; }
 .lps-benefits_header .heading-style-h2 { color: #12193D; margin: 0; }
 .lps-benefits_header .text-size-medium { color: #4a5062; margin: 0; font-size: 1.125rem !important; font-weight: 400 !important; line-height: 1.6; font-family: Manrope, sans-serif; font-style: normal; }
 .lps-benefits_header .text-size-medium strong { color: #12193D; }
 .section_lps-benefits .tag { background: rgba(47,204,100,0.12); border-color: rgba(47,204,100,0.28); }
-.section_lps-benefits .tag .tag_text { color: #1A8F44 !important; }
+.section_lps-benefits .tag .tag_text { color: #2FCC64; }
 .section_lps-benefits .tag .tag_dot { background: #2FCC64; }
 .lps-benefits_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .section_lps-benefits .lps-layout3_card { background: #fff; border: 1px solid rgba(18,25,61,0.10); border-radius: 16px; padding: 2rem 1.75rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; box-shadow: 0 4px 18px rgba(18,25,61,0.06); transition: transform 0.18s ease, box-shadow 0.18s ease; }

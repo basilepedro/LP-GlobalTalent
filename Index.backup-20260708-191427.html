@@ -2815,8 +2815,6 @@ a.button.do.w-button:hover {
 
 /* 7. WhatsApp link -> brand green (was #25D366). */
 .lps-form_form-whatsapp .link-2 { color: #2FCC64 !important; }
-/* 7b. Fecha o vao grande entre o botao do form e o bloco WhatsApp (margin do Webflow). */
-.lps-form_form-whatsapp { margin-top: 1.5rem !important; }
 
 /* 8. Timeline: reveal the first line of each step at rest, expand on hover.
       Purely CSS; no markup added inside the Swiper slides. */
@@ -3351,7 +3349,7 @@ a.button.do.w-button:hover {
 .lps-form_content-left .lps-stats_item {
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
+  align-items: flex-start !important;
   justify-content: flex-start !important;
   padding: 0 1.25rem !important;
   background: transparent !important;
@@ -3360,7 +3358,7 @@ a.button.do.w-button:hover {
   border-bottom: none !important;
   border-radius: 0 !important;
   position: relative;
-  text-align: center !important;
+  text-align: left !important;
 }
 .lps-form_content-left .lps-stats_item:first-child {
   padding-left: 0 !important;
@@ -3403,10 +3401,10 @@ a.button.do.w-button:hover {
   font-size: 0.9375rem !important;
   line-height: 1.6 !important;
   color: #4a5062 !important;
-  margin: 0 auto !important;
+  margin: 0 !important;
   max-width: none !important;
   padding-left: 0 !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 .lps-form_content-left .lps-stats_desc strong {
   color: #12193D !important;
@@ -4606,6 +4604,46 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                   </select>
                 </div>
 
+                <!-- Reconhecimento da trajetoria. Sinal de elegibilidade do endorsement -->
+                <div class="lps-form_question-label" data-lang="pt">Como você descreveria o reconhecimento da sua trajetória hoje?</div>
+                <div class="lps-form_question-label" lang="en" data-lang="en">How would you describe the recognition of your track record today?</div>
+                <div class="lps-form_inputs-wrap">
+                  <select name="Reconhecimento" class="lps-form_input w-select" data-lang="pt">
+                    <option value="">Selecione</option>
+                    <option value="Lider reconhecido">Líder reconhecido no meu campo</option>
+                    <option value="Em ascensao">Em ascensão, com resultados expressivos</option>
+                    <option value="Premios e midia">Tenho prêmios, publicações ou destaque na mídia</option>
+                    <option value="Nao sei">Não tenho certeza</option>
+                  </select>
+                  <select name="Recognition" class="lps-form_input w-select" lang="en" data-lang="en">
+                    <option value="">Select</option>
+                    <option value="Lider reconhecido">A recognized leader in my field</option>
+                    <option value="Em ascensao">Rising, with significant results</option>
+                    <option value="Premios e midia">I have awards, publications, or media coverage</option>
+                    <option value="Nao sei">Not sure</option>
+                  </select>
+                </div>
+
+                <!-- Prazo. Liga ao calendario escolar e a urgencia -->
+                <div class="lps-form_question-label" data-lang="pt">Quando você pretende se mudar?</div>
+                <div class="lps-form_question-label" lang="en" data-lang="en">When do you plan to move?</div>
+                <div class="lps-form_inputs-wrap">
+                  <select name="Prazo" class="lps-form_input w-select" data-lang="pt">
+                    <option value="">Selecione</option>
+                    <option value="Ate 6 meses">Nos próximos 6 meses</option>
+                    <option value="6 a 12 meses">De 6 a 12 meses</option>
+                    <option value="Mais de 12 meses">Mais de 12 meses</option>
+                    <option value="Planejando">Ainda estou planejando</option>
+                  </select>
+                  <select name="Timeline" class="lps-form_input w-select" lang="en" data-lang="en">
+                    <option value="">Select</option>
+                    <option value="Ate 6 meses">In the next 6 months</option>
+                    <option value="6 a 12 meses">In 6 to 12 months</option>
+                    <option value="Mais de 12 meses">More than 12 months</option>
+                    <option value="Planejando">Still planning</option>
+                  </select>
+                </div>
+
                 <!-- Situacao familiar. Qualifica perfis adjacentes (solo, casal, filhos, pais) -->
                 <div class="lps-form_question-label" data-lang="pt">Qual é a sua situação familiar?</div>
                 <div class="lps-form_question-label" lang="en" data-lang="en">What is your family situation?</div>
@@ -4703,10 +4741,10 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
   <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
     <div class="container-large">
       <div class="lps-benefits_header" data-gsap="fade-up">
-        <div class="tag">
+        <div data-wf--ui-lps-tag--variant="transparent" class="tag">
           <div class="tag_dot"></div>
-          <div class="tag_text" data-lang-inline="pt">UMA DECISÃO SÓ</div>
-          <div class="tag_text" lang="en" data-lang-inline="en">A SINGLE DECISION</div>
+          <div class="tag_text" data-lang-inline="pt">POR QUE O REINO UNIDO</div>
+          <div class="tag_text" lang="en" data-lang-inline="en">WHY THE UNITED KINGDOM</div>
           <div class="tag_dot"></div>
         </div>
         <h2 class="heading-style-h2" data-lang="pt">Por que o Reino Unido?</h2>
@@ -4759,7 +4797,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
         </div>
 
       </div>
-      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px;align-items:center;text-align:center;margin-left:auto;margin-right:auto">
+      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px">
         <p class="text-size-medium" data-lang="pt">Carreira, patrimônio e família: hoje, tudo isso depende de um cenário só. <strong>A Amorim trata as três frentes como uma decisão só, porque é um <span class="gt-hl">hub 360º</span>.</strong></p>
         <p class="text-size-medium" lang="en" data-lang="en">Career, wealth and family: today, all of it depends on a single scenario. <strong>Amorim treats the three fronts as a single decision, because it is a <span class="gt-hl">360º hub</span>.</strong></p>
       </div>
@@ -4803,18 +4841,16 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 ════════════════════════════════════════ -->
 <style>
 .gt-oque{background:#fff;}
-.gt-oque_inner{display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:start;}
+.gt-oque_inner{max-width:1180px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:start;}
 .gt-oque_text .tag_text{color:#004DFF !important;}
 .gt-oque_text h2{color:#12193D !important;margin:18px 0 0;}
 .gt-oque_text p{color:#4a5062 !important;font-size:1.08rem;line-height:1.65;font-weight:400;margin:14px 0 0;}
 .gt-oque_media{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;max-height:520px;background:#042C53;}
 .gt-oque_media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-@media(max-width:860px){.gt-oque_inner{grid-template-columns:1fr;gap:32px;}.gt-oque_media{aspect-ratio:16/10;max-height:none;}}
+@media(max-width:860px){.gt-oque_inner{grid-template-columns:1fr;gap:32px;padding:64px 20px;}.gt-oque_media{aspect-ratio:16/10;max-height:none;}}
 </style>
 <div class="gt-oque">
-  <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
-    <div class="container-large">
-      <div class="gt-oque_inner">
+  <div class="gt-oque_inner">
     <div class="gt-oque_text" data-gsap="fade-up">
       <div class="tag">
         <div class="tag_dot"></div>
@@ -4834,8 +4870,6 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
     <!-- PLACEHOLDER: trocar pela foto definitiva do Reino Unido -->
     <div class="gt-oque_media" data-gsap="fade-up">
       <img src="https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=1100&q=80" alt="Reino Unido, Londres" loading="lazy"/>
-    </div>
-      </div>
     </div>
   </div>
 </div>
@@ -6941,7 +6975,7 @@ if (_CountUpLib && 'IntersectionObserver' in window) {
 .lps-benefits_header .text-size-medium { color: #4a5062; margin: 0; font-size: 1.125rem !important; font-weight: 400 !important; line-height: 1.6; font-family: Manrope, sans-serif; font-style: normal; }
 .lps-benefits_header .text-size-medium strong { color: #12193D; }
 .section_lps-benefits .tag { background: rgba(47,204,100,0.12); border-color: rgba(47,204,100,0.28); }
-.section_lps-benefits .tag .tag_text { color: #1A8F44 !important; }
+.section_lps-benefits .tag .tag_text { color: #2FCC64; }
 .section_lps-benefits .tag .tag_dot { background: #2FCC64; }
 .lps-benefits_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .section_lps-benefits .lps-layout3_card { background: #fff; border: 1px solid rgba(18,25,61,0.10); border-radius: 16px; padding: 2rem 1.75rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; box-shadow: 0 4px 18px rgba(18,25,61,0.06); transition: transform 0.18s ease, box-shadow 0.18s ease; }

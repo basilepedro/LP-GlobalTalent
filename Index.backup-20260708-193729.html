@@ -4606,26 +4606,6 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                   </select>
                 </div>
 
-                <!-- Situacao familiar. Qualifica perfis adjacentes (solo, casal, filhos, pais) -->
-                <div class="lps-form_question-label" data-lang="pt">Qual é a sua situação familiar?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">What is your family situation?</div>
-                <div class="lps-form_inputs-wrap">
-                  <select name="Situacao_Familiar" class="lps-form_input w-select" data-lang="pt">
-                    <option value="">Selecione</option>
-                    <option value="Sozinho">Vou sozinho(a)</option>
-                    <option value="Casal sem filhos">Casal sem filhos</option>
-                    <option value="Casal com filhos">Casal com filhos</option>
-                    <option value="Levar pais">Quero levar também meus pais</option>
-                  </select>
-                  <select name="Family_Situation" class="lps-form_input w-select" lang="en" data-lang="en">
-                    <option value="">Select</option>
-                    <option value="Sozinho">I am going on my own</option>
-                    <option value="Casal sem filhos">Couple without children</option>
-                    <option value="Casal com filhos">Couple with children</option>
-                    <option value="Levar pais">I also want to bring my parents</option>
-                  </select>
-                </div>
-
                 <!-- Faixa de renda. Metrica de perfil, nao restritiva -->
                 <div class="lps-form_question-label" data-lang="pt">Qual é a sua faixa de renda familiar mensal?</div>
                 <div class="lps-form_question-label" lang="en" data-lang="en">What is your monthly household income range?</div>
@@ -4703,7 +4683,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
   <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
     <div class="container-large">
       <div class="lps-benefits_header" data-gsap="fade-up">
-        <div class="tag">
+        <div data-wf--ui-lps-tag--variant="transparent" class="tag">
           <div class="tag_dot"></div>
           <div class="tag_text" data-lang-inline="pt">UMA DECISÃO SÓ</div>
           <div class="tag_text" lang="en" data-lang-inline="en">A SINGLE DECISION</div>
@@ -6941,7 +6921,7 @@ if (_CountUpLib && 'IntersectionObserver' in window) {
 .lps-benefits_header .text-size-medium { color: #4a5062; margin: 0; font-size: 1.125rem !important; font-weight: 400 !important; line-height: 1.6; font-family: Manrope, sans-serif; font-style: normal; }
 .lps-benefits_header .text-size-medium strong { color: #12193D; }
 .section_lps-benefits .tag { background: rgba(47,204,100,0.12); border-color: rgba(47,204,100,0.28); }
-.section_lps-benefits .tag .tag_text { color: #1A8F44 !important; }
+.section_lps-benefits .tag .tag_text { color: #2FCC64; }
 .section_lps-benefits .tag .tag_dot { background: #2FCC64; }
 .lps-benefits_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .section_lps-benefits .lps-layout3_card { background: #fff; border: 1px solid rgba(18,25,61,0.10); border-radius: 16px; padding: 2rem 1.75rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; box-shadow: 0 4px 18px rgba(18,25,61,0.06); transition: transform 0.18s ease, box-shadow 0.18s ease; }
