@@ -372,6 +372,33 @@ Antes de publicar: trocar https://SEUDOMINIO pela URL final da pagina nas tags o
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 
 <style>
+/* ════════════════════════════════════════════════════════════
+   DESIGN TOKENS — v2. Cobre os componentes reescritos nesta revisão
+   (não é migração retroativa dos ~1.169 !important legados no restante do arquivo)
+   ════════════════════════════════════════════════════════════ */
+:root {
+  --gt-navy: #12193D;
+  --gt-navy-deep: #0A0E23;
+  --gt-electric: #004DFF;
+  --gt-neon: #2FCC64;
+  --gt-ink: #12193D;
+  --gt-ink-soft: #4a5062;
+  --gt-offwhite: oklch(97% 0.006 270);
+  --gt-offwhite-line: oklch(88% 0.015 270);
+  --gt-tint: oklch(95.5% 0.02 255);
+  --gt-tint-line: oklch(89% 0.03 255);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 html { font-size: 16px; }
 @media (min-width: 991px) { html { font-size: calc(12px + 4 * ((100vw - 991px) / 449)); } }
 @media (min-width: 1440px) { html { font-size: 16px; } }
@@ -526,8 +553,7 @@ html body .div-block-84 > .section_lps-single-testimonial-copy,
   margin-top: 2rem;
   padding: 1rem 1.25rem;
   background: rgba(0,77,255,0.07);
-  border-left: 3px solid #004DFF;
-  border-radius: 0.375rem;
+  border-radius: 0.75rem;
   font-size: 0.8125rem;
   line-height: 1.6;
   color: #12193D;
@@ -1071,6 +1097,7 @@ html body .div-block-84 > .section_lps-single-testimonial-copy,
 .lps-form_form-whatsapp .link-2:hover { text-decoration: underline; }
 /* ── FORM: question labels + conditional fields ── */
 .lps-form_question-label {
+  display: block;
   font-size: 0.8125rem;
   font-weight: 600;
   color: #4a5062;
@@ -1884,6 +1911,8 @@ a.button.do.w-button:hover {
 .lps-pathways-v2_panel-info .heading-style-h4 {
   color: #12193D;
   margin: 0 0 1rem;
+  font-size: 1.375rem !important;
+  line-height: 1.3 !important;
 }
 .lps-pathways-v2_panel-info .text-size-medium {
   color: #4a5062;
@@ -2223,7 +2252,7 @@ a.button.do.w-button:hover {
 .section_lps-layout2 .text-weight-bold { color: #fff !important; }
 .section_lps-layout2 .feature-item_icon { opacity: 0.9; }
 
-.section_lps-reviews { background: #F7F8FF; }
+.section_lps-reviews { background: #FFFFFF; }
 .section_lps-video-testimonials { background: #F7F8FF; }
 .section_lps-pathways { background: #FFFFFF !important; }
 .section_lps-timeline { background: #F7F8FF; }
@@ -2622,60 +2651,10 @@ a.button.do.w-button:hover {
   line-height: 1.65 !important;
 }
 
-/* ══════════════════════════════════════════════════════
-   CEO QUOTE, substitui Olga (bloco single testimonial)
-══════════════════════════════════════════════════════ */
-.lps-ceo-quote {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  gap: 0.375rem !important;
-}
-.lps-ceo-quote_mark {
-  display: none;
-}
-.lps-ceo-quote_text {
-  font-size: 1.375rem !important;
-  font-style: italic !important;
-  font-weight: 600 !important;
-  color: #fff !important;
-  line-height: 1.65 !important;
-  letter-spacing: 0.01em !important;
-  max-width: 38ch;
-  margin: 0 !important;
-}
-.lps-ceo-quote_text::before {
-  content: '\201C';
-  color: #2FCC64;
-  font-size: 2.25rem;
-  font-style: normal;
-  line-height: 0;
-  vertical-align: -0.35em;
-  margin-right: 0.05em;
-}
-.lps-ceo-quote_text::after {
-  content: '\201D';
-  color: #2FCC64;
-  font-size: 2.25rem;
-  font-style: normal;
-  line-height: 0;
-  vertical-align: -0.35em;
-  margin-left: 0.05em;
-}
-.lps-ceo-quote_sub {
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.62);
-  font-style: italic;
-  line-height: 1.5;
-  max-width: 50ch;
-  margin: 0.25rem 0 0;
-}
-.lps-ceo-quote_role {
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.45);
-  margin-top: 0.125rem;
-}
+/* .lps-ceo-quote (bloco single testimonial em navy full-bleed) removido nesta
+   revisão (v2): nunca era referenciado em nenhuma marcação desta LP — 0 usos
+   de .section_lps-single-testimonial/.lps-ceo-quote no HTML. A citação da
+   CEO agora vive em .gt-ceo (inset editorial, ver acima). */
 
 /* ══════════════════════════════════════════════════════
    LAYOUT2, novo heading + promessa (deck Giselle)
@@ -2815,6 +2794,8 @@ a.button.do.w-button:hover {
 
 /* 7. WhatsApp link -> brand green (was #25D366). */
 .lps-form_form-whatsapp .link-2 { color: #2FCC64 !important; }
+/* 7b. Fecha o vao grande entre o botao do form e o bloco WhatsApp (margin do Webflow). */
+.lps-form_form-whatsapp { margin-top: 1.5rem !important; }
 
 /* 8. Timeline: reveal the first line of each step at rest, expand on hover.
       Purely CSS; no markup added inside the Swiper slides. */
@@ -3349,7 +3330,7 @@ a.button.do.w-button:hover {
 .lps-form_content-left .lps-stats_item {
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important;
+  align-items: center !important;
   justify-content: flex-start !important;
   padding: 0 1.25rem !important;
   background: transparent !important;
@@ -3358,7 +3339,7 @@ a.button.do.w-button:hover {
   border-bottom: none !important;
   border-radius: 0 !important;
   position: relative;
-  text-align: left !important;
+  text-align: center !important;
 }
 .lps-form_content-left .lps-stats_item:first-child {
   padding-left: 0 !important;
@@ -3401,10 +3382,10 @@ a.button.do.w-button:hover {
   font-size: 0.9375rem !important;
   line-height: 1.6 !important;
   color: #4a5062 !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
   max-width: none !important;
   padding-left: 0 !important;
-  text-align: left !important;
+  text-align: center !important;
 }
 .lps-form_content-left .lps-stats_desc strong {
   color: #12193D !important;
@@ -3729,131 +3710,15 @@ a.button.do.w-button:hover {
   .living_card.span-full { height: 240px !important; }
 }
 
-/* ════════════════════════════════════════════════════════════
-   LIVING — DIREÇÃO A · CREAM EDITORIAL (Monocle / NYT Travel)
-   - Fundo cream quente (rompe sequência navy)
-   - Cards sem sombra, hairline navy 1px
-   - Compare vira stat slab: eyebrow uppercase + fact serif italic
-   - Verde sai da seção; navy é o tom condutor
-   ════════════════════════════════════════════════════════════ */
-
-/* Section background → cream */
-.section_lps-living {
-  background: #F4EFE6 !important;
-}
-/* Remove navy radial glow (não combina com cream) */
+/* CSS morto removido nesta revisão (v2): direção "cream editorial" nunca usada
+   para .section_lps-living — a marcação real usa .vidauk-tile/.gt-after_track
+   (carrossel), não .living_card/.living_flip-front. A versão navy ativa
+   está definida mais abaixo, em "LIVING — navy médio".
+   IMPORTANTE: uma única regra desse bloco antigo não era morta — ela escondia
+   o glow radial azul de .section_lps-living::before (definido no bloco base,
+   mais acima). Sem ela o gradiente reaparece. Mantida abaixo para preservar
+   o visual original (Pedro não queria esse gradiente de volta). */
 .section_lps-living::before { display: none !important; }
-
-/* Header tipografia → navy sobre cream */
-.section_lps-living .living_header .heading-style-h2 { color: #12193D !important; }
-.section_lps-living .living_header .heading-style-h2 strong { color: #12193D !important; }
-.section_lps-living .living_header .text-size-medium { color: rgba(18,25,61,0.66) !important; }
-
-/* Eyebrow tag → navy outline sobre cream */
-.section_lps-living .living_header .tag {
-  background: rgba(18,25,61,0.06) !important;
-  border-color: rgba(18,25,61,0.18) !important;
-}
-.section_lps-living .living_header .tag_text {
-  color: #12193D !important;
-  opacity: 0.78 !important;
-}
-.section_lps-living .living_header .tag_dot { background: #12193D !important; }
-
-/* Cards: sem sombra, hairline navy */
-.section_lps-living .living_flip-front {
-  box-shadow: none !important;
-  border: 1px solid rgba(18,25,61,0.10) !important;
-  border-radius: 4px !important;
-  background: #FFFFFF !important;
-}
-.section_lps-living .living_card,
-.section_lps-living .living_card-content {
-  border-radius: 4px !important;
-}
-.section_lps-living .living_card-img {
-  filter: saturate(0.95) contrast(1.02) !important;
-}
-
-/* Tipografia do card refinada */
-.section_lps-living .living_card-title {
-  color: #12193D !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.015em !important;
-}
-.section_lps-living .living_card-body {
-  color: #4a4f63 !important;
-}
-
-/* ─── Stat slab: substitui o hairline verde + uppercase ─── */
-.section_lps-living .living_card-compare {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.25rem !important;
-  align-self: stretch !important;
-  margin: auto 0 0 !important;
-  padding-top: 0.75rem !important;
-  border-top: 1px solid rgba(18,25,61,0.10) !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
-  font-weight: 400 !important;
-  font-size: inherit !important;
-  color: inherit !important;
-}
-.section_lps-living .living_card-compare-eyebrow {
-  font-family: Manrope, Inter, system-ui, sans-serif;
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(18,25,61,0.5);
-  line-height: 1.2;
-}
-.section_lps-living .living_card-compare-fact {
-  font-family: Manrope, sans-serif;
-  font-size: 1.0625rem;
-  font-weight: 700;
-  color: #12193D;
-  letter-spacing: -0.012em;
-  line-height: 1.25;
-  text-wrap: balance;
-}
-/* Wide cards: stat slab maior */
-.section_lps-living .living_card:first-child .living_card-compare-fact,
-.section_lps-living .living_card.span-full .living_card-compare-fact {
-  font-size: 1.25rem;
-}
-.section_lps-living .living_card:first-child .living_card-compare-eyebrow,
-.section_lps-living .living_card.span-full .living_card-compare-eyebrow {
-  font-size: 0.6875rem;
-}
-
-/* Heights: mais ar para acomodar o stat slab */
-.section_lps-living .living_card { height: 340px !important; }
-.section_lps-living .living_card:first-child,
-.section_lps-living .living_card.span-full { height: 240px !important; }
-.section_lps-living .living_card-img { height: 48% !important; }
-.section_lps-living .living_card:first-child .living_card-img,
-.section_lps-living .living_card.span-full .living_card-img { height: 100% !important; }
-.section_lps-living .living_card-content {
-  padding: 1.25rem 1.375rem 1.375rem !important;
-}
-.section_lps-living .living_card:first-child .living_card-content,
-.section_lps-living .living_card.span-full .living_card-content {
-  padding: 1.75rem 2rem !important;
-}
-@media (max-width: 991px) {
-  .section_lps-living .living_card { height: 340px !important; }
-}
-@media (max-width: 767px) {
-  .section_lps-living .living_card,
-  .section_lps-living .living_card:first-child,
-  .section_lps-living .living_card.span-full { height: 360px !important; }
-  .section_lps-living .living_card-img,
-  .section_lps-living .living_card:first-child .living_card-img,
-  .section_lps-living .living_card.span-full .living_card-img { height: 50% !important; }
-  .section_lps-living .living_card-compare-fact { font-size: 1rem; }
-}
 
 /* ════════════════════════════════════════════════════════════
    FINAL TIGHTENING — gap intro→KPI no form, curve removida no Living
@@ -3929,25 +3794,24 @@ a.button.do.w-button:hover {
 }
 
 /* ════════════════════════════════════════════════════════════
-   LIVING — navy médio (mesmo do Benefits)
-   #07091F era escuro demais; agora segue o mesmo tom #12193D
+   LIVING — azul claro, igual ao bloco "O visto" (var(--gt-tint)).
+   Pedro pediu para unificar com o tom de "O que é o visto Global Talent?".
    ════════════════════════════════════════════════════════════ */
 .section_lps-living {
-  background: #12193D !important;
+  background: var(--gt-tint) !important;
 }
-/* Header em cores escuras (cream) → branco */
 .section_lps-living .living_header .heading-style-h2,
-.section_lps-living .living_header .heading-style-h2 strong { color: #FFFFFF !important; }
-.section_lps-living .living_header .text-size-medium { color: rgba(255,255,255,0.7) !important; }
+.section_lps-living .living_header .heading-style-h2 strong { color: #12193D !important; }
+.section_lps-living .living_header .text-size-medium { color: rgba(18,25,61,0.72) !important; }
 .section_lps-living .living_header .tag {
-  background: rgba(255,255,255,0.08) !important;
-  border-color: rgba(255,255,255,0.18) !important;
+  background: rgba(18,25,61,0.06) !important;
+  border-color: rgba(18,25,61,0.18) !important;
 }
 .section_lps-living .living_header .tag_text {
-  color: rgba(255,255,255,0.92) !important;
+  color: #004DFF !important;
   opacity: 1 !important;
 }
-.section_lps-living .living_header .tag_dot { background: rgba(255,255,255,0.5) !important; }
+.section_lps-living .living_header .tag_dot { background: #004DFF !important; }
 /* Cards: sem borda navy (sumiria no dark) + sombra suave pra destacar */
 .section_lps-living .living_flip-front {
   border: none !important;
@@ -4191,22 +4055,6 @@ a.button.do.w-button:hover {
   color: rgba(18,25,61,0.72) !important;
   max-width: 60ch;
 }
-.section_lps-single-testimonial .lps-ceo-quote { gap: 0.5rem !important; }
-.section_lps-single-testimonial .lps-ceo-quote_text {
-  font-size: 1.625rem !important;
-  line-height: 1.5 !important;
-  max-width: 42ch !important;
-}
-.section_lps-single-testimonial .lps-ceo-quote_text::before,
-.section_lps-single-testimonial .lps-ceo-quote_text::after {
-  font-size: 2.5rem !important;
-}
-.section_lps-single-testimonial .lps-ceo-quote_sub {
-  font-size: 0.9375rem !important;
-  line-height: 1.55 !important;
-  color: rgba(255,255,255,0.72) !important;
-  max-width: 56ch !important;
-}
 </style>
 
 <!-- Lenis e GSAP removidos a pedido do Edilio (11/06/2026): o efeito de rolagem borrava as letras -->
@@ -4383,8 +4231,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
               <h1 lang="en" data-lang="en">Your track record is your credential.<br><strong>Make it your route to the United Kingdom.</strong></h1>
             </div>
             <div class="max-width-large">
-              <p class="text-size-regular" data-lang="pt">Para líderes em tecnologia, ciência, artes e negócios que querem viver no Reino Unido pela própria liderança, sem depender de uma oferta de emprego ou de uma empresa que os patrocine. Uma rota clara, desde o primeiro passo, para você ir sozinho, em casal ou com a família.</p>
-              <p class="text-size-regular" lang="en" data-lang="en">For leaders in technology, science, the arts, and business who want to live in the United Kingdom on the strength of their own work, without depending on a job offer or a sponsoring company. A clear route, from the first step, whether you go solo, as a couple or with the family.</p>
+              <p class="text-size-regular" data-lang="pt">Para talentos em tecnologia, ciência, artes e negócios que querem viver no Reino Unido pela própria trajetória, sem depender de uma oferta de emprego ou de uma empresa que os patrocine. Uma rota clara, desde o primeiro passo, para você ir sozinho, em casal ou com a família.</p>
+              <p class="text-size-regular" lang="en" data-lang="en">For talented professionals in technology, science, the arts, and business who want to live in the United Kingdom on the strength of their own work, without depending on a job offer or a sponsoring company. A clear route, from the first step, whether you go solo, as a couple or with the family.</p>
             </div>
           </div>
           <div class="z-index-2" data-gsap="fade-up">
@@ -4499,26 +4347,42 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 <input type="hidden" name="fbclid" value=""/>
                 <input type="hidden" name="Pagina" value="LP Global Talent UK"/>
                 <div class="lps-form_inputs-wrap">
-                  <input class="lps-form_input w-input" name="Nome" placeholder="Nome" type="text" required/>
-                  <input class="lps-form_input w-input" name="Sobrenome" placeholder="Sobrenome" type="text" required/>
+                  <label class="sr-only" for="gt-nome" data-lang="pt">Nome</label>
+                  <input id="gt-nome" class="lps-form_input w-input" data-lang="pt" name="Nome" placeholder="Nome" type="text" required/>
+                  <label class="sr-only" for="gt-nome-en" lang="en" data-lang="en">First name</label>
+                  <input id="gt-nome-en" class="lps-form_input w-input" lang="en" data-lang="en" name="FirstName" placeholder="First name" type="text" required/>
+                  <label class="sr-only" for="gt-sobrenome" data-lang="pt">Sobrenome</label>
+                  <input id="gt-sobrenome" class="lps-form_input w-input" data-lang="pt" name="Sobrenome" placeholder="Sobrenome" type="text" required/>
+                  <label class="sr-only" for="gt-sobrenome-en" lang="en" data-lang="en">Last name</label>
+                  <input id="gt-sobrenome-en" class="lps-form_input w-input" lang="en" data-lang="en" name="LastName" placeholder="Last name" type="text" required/>
                 </div>
                 <div class="lps-form_inputs-wrap">
-                  <input class="lps-form_input w-input" name="Email" placeholder="Email" type="email" required/>
-                  <input ms-code-phone-number="br,gb,us" class="lps-form_input w-input" id="telefone-migra" name="Telefone" placeholder="Telefone / WhatsApp" type="tel" required/>
+                  <label class="sr-only" for="gt-email" data-lang="pt">Email</label>
+                  <input id="gt-email" class="lps-form_input w-input" data-lang="pt" name="Email" placeholder="Email" type="email" required/>
+                  <label class="sr-only" for="gt-email-en" lang="en" data-lang="en">Email</label>
+                  <input id="gt-email-en" class="lps-form_input w-input" lang="en" data-lang="en" name="Email" placeholder="Email" type="email" required/>
+                  <label class="sr-only" for="telefone-migra" data-lang="pt">Telefone / WhatsApp</label>
+                  <input ms-code-phone-number="br,gb,us" class="lps-form_input w-input" data-lang="pt" id="telefone-migra" name="Telefone" placeholder="Telefone / WhatsApp" type="tel" required/>
+                  <label class="sr-only" for="telefone-migra-en" lang="en" data-lang="en">Phone / WhatsApp</label>
+                  <input ms-code-phone-number="br,gb,us" class="lps-form_input w-input" lang="en" data-lang="en" id="telefone-migra-en" name="Phone" placeholder="Phone / WhatsApp" type="tel" required/>
                 </div>
                 <!-- Nacionalidade + Localização atual -->
                 <div class="lps-form_inputs-wrap">
-                  <input class="lps-form_input w-input" name="Nacionalidade" data-lang="pt" placeholder="Sua nacionalidade (ex: Americana, Alemã)" type="text" required/>
-                  <input class="lps-form_input w-input" name="Nationality" lang="en" data-lang="en" placeholder="Your nationality (e.g. American, German)" type="text" required/>
+                  <label class="sr-only" for="gt-nacionalidade-pt" data-lang="pt">Sua nacionalidade</label>
+                  <label class="sr-only" for="gt-nacionalidade-en" lang="en" data-lang="en">Your nationality</label>
+                  <input id="gt-nacionalidade-pt" class="lps-form_input w-input" name="Nacionalidade" data-lang="pt" placeholder="Sua nacionalidade (ex: Americana, Alemã)" type="text" required/>
+                  <input id="gt-nacionalidade-en" class="lps-form_input w-input" name="Nationality" lang="en" data-lang="en" placeholder="Your nationality (e.g. American, German)" type="text" required/>
                 </div>
                 <div class="lps-form_inputs-wrap">
-                  <input class="lps-form_input w-input" name="Localizacao" data-lang="pt" placeholder="Onde você mora atualmente? (ex: São Paulo, Lisboa)" type="text" required/>
-                  <input class="lps-form_input w-input" name="CurrentLocation" lang="en" data-lang="en" placeholder="Where do you currently live? (e.g. São Paulo, Lisbon)" type="text" required/>
+                  <label class="sr-only" for="gt-localizacao-pt" data-lang="pt">Onde você mora atualmente</label>
+                  <label class="sr-only" for="gt-localizacao-en" lang="en" data-lang="en">Where you currently live</label>
+                  <input id="gt-localizacao-pt" class="lps-form_input w-input" name="Localizacao" data-lang="pt" placeholder="Onde você mora atualmente? (ex: São Paulo, Lisboa)" type="text" required/>
+                  <input id="gt-localizacao-en" class="lps-form_input w-input" name="CurrentLocation" lang="en" data-lang="en" placeholder="Where do you currently live? (e.g. São Paulo, Lisbon)" type="text" required/>
                 </div>
 
                 <!-- Campo de atuação. Qualifica a rota de endorsement do Global Talent -->
-                <div class="lps-form_question-label" data-lang="pt">Em qual campo está a sua trajetória?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">In which field is your track record?</div>
+                <label class="lps-form_question-label" for="motivo-pt" data-lang="pt">Em qual campo está a sua trajetória?</label>
+                <label class="lps-form_question-label" for="motivo-en" lang="en" data-lang="en">In which field is your track record?</label>
                 <div class="lps-form_inputs-wrap">
                   <select name="Motivo" id="motivo-pt" required class="lps-form_input w-select" data-lang="pt" onchange="showConditionalFields(this.value, 'pt')">
                     <option value="">Selecione</option>
@@ -4539,16 +4403,16 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 </div>
 
                 <!-- Anos de experiencia na area. Campo oficial do time -->
-                <div class="lps-form_question-label" data-lang="pt">Há quantos anos você trabalha nesta área?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">How many years have you worked in this field?</div>
+                <label class="lps-form_question-label" for="anos-area-pt" data-lang="pt">Há quantos anos você trabalha nesta área?</label>
+                <label class="lps-form_question-label" for="anos-area-en" lang="en" data-lang="en">How many years have you worked in this field?</label>
                 <div class="lps-form_inputs-wrap">
-                  <select name="Anos_Area" class="lps-form_input w-select" data-lang="pt">
+                  <select id="anos-area-pt" name="Anos_Area" class="lps-form_input w-select" data-lang="pt">
                     <option value="">Selecione</option>
                     <option value="Menos de 5">Menos de 5 anos</option>
                     <option value="5 a 10">De 5 a 10 anos</option>
                     <option value="Mais de 10">Mais de 10 anos</option>
                   </select>
-                  <select name="Years_Field" class="lps-form_input w-select" lang="en" data-lang="en">
+                  <select id="anos-area-en" name="Years_Field" class="lps-form_input w-select" lang="en" data-lang="en">
                     <option value="">Select</option>
                     <option value="Menos de 5">Less than 5 years</option>
                     <option value="5 a 10">5 to 10 years</option>
@@ -4557,15 +4421,15 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 </div>
 
                 <!-- Cargo de lideranca. Campo oficial do time -->
-                <div class="lps-form_question-label" data-lang="pt">Você já ocupou cargo de liderança, gestão ou posição estratégica?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">Have you held a leadership, management, or strategic role?</div>
+                <label class="lps-form_question-label" for="cargo-lideranca-pt" data-lang="pt">Você já ocupou cargo de liderança, gestão ou posição estratégica?</label>
+                <label class="lps-form_question-label" for="cargo-lideranca-en" lang="en" data-lang="en">Have you held a leadership, management, or strategic role?</label>
                 <div class="lps-form_inputs-wrap">
-                  <select name="Cargo_Lideranca" class="lps-form_input w-select" data-lang="pt">
+                  <select id="cargo-lideranca-pt" name="Cargo_Lideranca" class="lps-form_input w-select" data-lang="pt">
                     <option value="">Selecione</option>
                     <option value="Sim">Sim</option>
                     <option value="Nao">Não</option>
                   </select>
-                  <select name="Leadership_Role" class="lps-form_input w-select" lang="en" data-lang="en">
+                  <select id="cargo-lideranca-en" name="Leadership_Role" class="lps-form_input w-select" lang="en" data-lang="en">
                     <option value="">Select</option>
                     <option value="Sim">Yes</option>
                     <option value="Nao">No</option>
@@ -4573,15 +4437,15 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 </div>
 
                 <!-- Projetos com resultados. Campo oficial do time -->
-                <div class="lps-form_question-label" data-lang="pt">Você já liderou projetos ou iniciativas com resultados relevantes para a empresa ou o mercado?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">Have you led projects or initiatives with relevant results for the company or the market?</div>
+                <label class="lps-form_question-label" for="projetos-resultados-pt" data-lang="pt">Você já liderou projetos ou iniciativas com resultados relevantes para a empresa ou o mercado?</label>
+                <label class="lps-form_question-label" for="projetos-resultados-en" lang="en" data-lang="en">Have you led projects or initiatives with relevant results for the company or the market?</label>
                 <div class="lps-form_inputs-wrap">
-                  <select name="Projetos_Resultados" class="lps-form_input w-select" data-lang="pt">
+                  <select id="projetos-resultados-pt" name="Projetos_Resultados" class="lps-form_input w-select" data-lang="pt">
                     <option value="">Selecione</option>
                     <option value="Sim">Sim</option>
                     <option value="Nao">Não</option>
                   </select>
-                  <select name="Project_Results" class="lps-form_input w-select" lang="en" data-lang="en">
+                  <select id="projetos-resultados-en" name="Project_Results" class="lps-form_input w-select" lang="en" data-lang="en">
                     <option value="">Select</option>
                     <option value="Sim">Yes</option>
                     <option value="Nao">No</option>
@@ -4589,73 +4453,33 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 </div>
 
                 <!-- Reconhecimento externo. Campo oficial do time -->
-                <div class="lps-form_question-label" data-lang="pt">Seu trabalho já recebeu reconhecimento externo, como palestras, prêmios, publicações, mídia ou participação em eventos?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">Has your work received external recognition, such as talks, awards, publications, media, or event participation?</div>
+                <label class="lps-form_question-label" for="reconhecimento-externo-pt" data-lang="pt">Seu trabalho já recebeu reconhecimento externo, como palestras, prêmios, publicações, mídia ou participação em eventos?</label>
+                <label class="lps-form_question-label" for="reconhecimento-externo-en" lang="en" data-lang="en">Has your work received external recognition, such as talks, awards, publications, media, or event participation?</label>
                 <div class="lps-form_inputs-wrap">
-                  <select name="Reconhecimento_Externo" class="lps-form_input w-select" data-lang="pt">
+                  <select id="reconhecimento-externo-pt" name="Reconhecimento_Externo" class="lps-form_input w-select" data-lang="pt">
                     <option value="">Selecione</option>
                     <option value="Sim">Sim</option>
                     <option value="Nao">Não</option>
                   </select>
-                  <select name="External_Recognition" class="lps-form_input w-select" lang="en" data-lang="en">
+                  <select id="reconhecimento-externo-en" name="External_Recognition" class="lps-form_input w-select" lang="en" data-lang="en">
                     <option value="">Select</option>
                     <option value="Sim">Yes</option>
                     <option value="Nao">No</option>
                   </select>
                 </div>
 
-                <!-- Reconhecimento da trajetoria. Sinal de elegibilidade do endorsement -->
-                <div class="lps-form_question-label" data-lang="pt">Como você descreveria o reconhecimento da sua trajetória hoje?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">How would you describe the recognition of your track record today?</div>
-                <div class="lps-form_inputs-wrap">
-                  <select name="Reconhecimento" class="lps-form_input w-select" data-lang="pt">
-                    <option value="">Selecione</option>
-                    <option value="Lider reconhecido">Líder reconhecido no meu campo</option>
-                    <option value="Em ascensao">Em ascensão, com resultados expressivos</option>
-                    <option value="Premios e midia">Tenho prêmios, publicações ou destaque na mídia</option>
-                    <option value="Nao sei">Não tenho certeza</option>
-                  </select>
-                  <select name="Recognition" class="lps-form_input w-select" lang="en" data-lang="en">
-                    <option value="">Select</option>
-                    <option value="Lider reconhecido">A recognized leader in my field</option>
-                    <option value="Em ascensao">Rising, with significant results</option>
-                    <option value="Premios e midia">I have awards, publications, or media coverage</option>
-                    <option value="Nao sei">Not sure</option>
-                  </select>
-                </div>
-
-                <!-- Prazo. Liga ao calendario escolar e a urgencia -->
-                <div class="lps-form_question-label" data-lang="pt">Quando você pretende se mudar?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">When do you plan to move?</div>
-                <div class="lps-form_inputs-wrap">
-                  <select name="Prazo" class="lps-form_input w-select" data-lang="pt">
-                    <option value="">Selecione</option>
-                    <option value="Ate 6 meses">Nos próximos 6 meses</option>
-                    <option value="6 a 12 meses">De 6 a 12 meses</option>
-                    <option value="Mais de 12 meses">Mais de 12 meses</option>
-                    <option value="Planejando">Ainda estou planejando</option>
-                  </select>
-                  <select name="Timeline" class="lps-form_input w-select" lang="en" data-lang="en">
-                    <option value="">Select</option>
-                    <option value="Ate 6 meses">In the next 6 months</option>
-                    <option value="6 a 12 meses">In 6 to 12 months</option>
-                    <option value="Mais de 12 meses">More than 12 months</option>
-                    <option value="Planejando">Still planning</option>
-                  </select>
-                </div>
-
                 <!-- Situacao familiar. Qualifica perfis adjacentes (solo, casal, filhos, pais) -->
-                <div class="lps-form_question-label" data-lang="pt">Qual é a sua situação familiar?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">What is your family situation?</div>
+                <label class="lps-form_question-label" for="situacao-familiar-pt" data-lang="pt">Qual é a sua situação familiar?</label>
+                <label class="lps-form_question-label" for="situacao-familiar-en" lang="en" data-lang="en">What is your family situation?</label>
                 <div class="lps-form_inputs-wrap">
-                  <select name="Situacao_Familiar" class="lps-form_input w-select" data-lang="pt">
+                  <select id="situacao-familiar-pt" name="Situacao_Familiar" class="lps-form_input w-select" data-lang="pt">
                     <option value="">Selecione</option>
                     <option value="Sozinho">Vou sozinho(a)</option>
                     <option value="Casal sem filhos">Casal sem filhos</option>
                     <option value="Casal com filhos">Casal com filhos</option>
                     <option value="Levar pais">Quero levar também meus pais</option>
                   </select>
-                  <select name="Family_Situation" class="lps-form_input w-select" lang="en" data-lang="en">
+                  <select id="situacao-familiar-en" name="Family_Situation" class="lps-form_input w-select" lang="en" data-lang="en">
                     <option value="">Select</option>
                     <option value="Sozinho">I am going on my own</option>
                     <option value="Casal sem filhos">Couple without children</option>
@@ -4665,10 +4489,10 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                 </div>
 
                 <!-- Faixa de renda. Metrica de perfil, nao restritiva -->
-                <div class="lps-form_question-label" data-lang="pt">Qual é a sua faixa de renda familiar mensal?</div>
-                <div class="lps-form_question-label" lang="en" data-lang="en">What is your monthly household income range?</div>
+                <label class="lps-form_question-label" for="faixa-renda-pt" data-lang="pt">Qual é a sua faixa de renda familiar mensal?</label>
+                <label class="lps-form_question-label" for="faixa-renda-en" lang="en" data-lang="en">What is your monthly household income range?</label>
                 <div class="lps-form_inputs-wrap">
-                  <select name="Faixa_Renda" class="lps-form_input w-select" data-lang="pt">
+                  <select id="faixa-renda-pt" name="Faixa_Renda" class="lps-form_input w-select" data-lang="pt">
                     <option value="">Selecione</option>
                     <option value="Ate 20k">Até R$ 20 mil</option>
                     <option value="20k a 40k">R$ 20 mil a R$ 40 mil</option>
@@ -4676,7 +4500,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
                     <option value="Acima de 60k">Acima de R$ 60 mil</option>
                     <option value="Nao informar">Prefiro não informar</option>
                   </select>
-                  <select name="Income_Range" class="lps-form_input w-select" lang="en" data-lang="en">
+                  <select id="faixa-renda-en" name="Income_Range" class="lps-form_input w-select" lang="en" data-lang="en">
                     <option value="">Select</option>
                     <option value="Ate 20k">Up to R$ 20k</option>
                     <option value="20k a 40k">R$ 20k to R$ 40k</option>
@@ -4688,10 +4512,10 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 
                 <!-- Campos condicionais: Ainda não sei o campo -->
                 <div id="cond-outro" class="lps-form_conditional" style="display:none">
-                  <div class="lps-form_question-label" data-lang="pt">Conte-nos mais sobre a sua trajetória</div>
-                  <div class="lps-form_question-label" lang="en" data-lang="en">Tell us more about your track record</div>
-                  <textarea name="Descricao_Outro" class="lps-form_input w-input" data-lang="pt" placeholder="Conte-nos mais sobre a sua trajetória" rows="3" style="resize:vertical;height:auto;"></textarea>
-                  <textarea name="Description_Other" class="lps-form_input w-input" lang="en" data-lang="en" placeholder="Tell us more about your track record" rows="3" style="resize:vertical;height:auto;"></textarea>
+                  <label class="lps-form_question-label" for="descricao-outro-pt" data-lang="pt">Conte-nos mais sobre a sua trajetória</label>
+                  <label class="lps-form_question-label" for="descricao-outro-en" lang="en" data-lang="en">Tell us more about your track record</label>
+                  <textarea id="descricao-outro-pt" name="Descricao_Outro" class="lps-form_input w-input" data-lang="pt" placeholder="Conte-nos mais sobre a sua trajetória" rows="3" style="resize:vertical;height:auto;"></textarea>
+                  <textarea id="descricao-outro-en" name="Description_Other" class="lps-form_input w-input" lang="en" data-lang="en" placeholder="Tell us more about your track record" rows="3" style="resize:vertical;height:auto;"></textarea>
                 </div>
 
                 <input type="submit" data-wait="Aguarde..." class="lps-form_button w-button" data-lang="pt" value="Fale com especialista"/>
@@ -4741,16 +4565,16 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
   <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
     <div class="container-large">
       <div class="lps-benefits_header" data-gsap="fade-up">
-        <div data-wf--ui-lps-tag--variant="transparent" class="tag">
+        <div class="tag">
           <div class="tag_dot"></div>
-          <div class="tag_text" data-lang-inline="pt">POR QUE O REINO UNIDO</div>
-          <div class="tag_text" lang="en" data-lang-inline="en">WHY THE UNITED KINGDOM</div>
+          <div class="tag_text" data-lang-inline="pt">UMA DECISÃO SÓ</div>
+          <div class="tag_text" lang="en" data-lang-inline="en">A SINGLE DECISION</div>
           <div class="tag_dot"></div>
         </div>
         <h2 class="heading-style-h2" data-lang="pt">Por que o Reino Unido?</h2>
         <h2 class="heading-style-h2" lang="en" data-lang="en">Why the United Kingdom?</h2>
-        <p class="text-size-medium" data-lang="pt">Quem se antecipa olha para o Reino Unido por três motivos, e <strong>provavelmente um deles já passou pela sua cabeça mais de uma vez</strong>.</p>
-        <p class="text-size-medium" lang="en" data-lang="en">Those who plan ahead look to the United Kingdom for three reasons, and <strong>one of them has probably crossed your mind more than once</strong>.</p>
+        <p class="text-size-medium" data-lang="pt">O Reino Unido está entre as seis maiores economias do mundo. <strong>É o tipo de cenário que muda o peso da sua carreira, do seu patrimônio e da sua família</strong>.</p>
+        <p class="text-size-medium" lang="en" data-lang="en">The United Kingdom is among the six largest economies in the world. <strong>It is the kind of scenario that changes the weight of your career, your wealth and your family</strong>.</p>
       </div>
       <div class="lps-layout3_grid lps-benefits_grid" data-gsap="stagger">
 
@@ -4797,7 +4621,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
         </div>
 
       </div>
-      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px">
+      <div class="lps-benefits_header" data-gsap="fade-up" style="margin-top:48px;align-items:center;text-align:center;margin-left:auto;margin-right:auto">
         <p class="text-size-medium" data-lang="pt">Carreira, patrimônio e família: hoje, tudo isso depende de um cenário só. <strong>A Amorim trata as três frentes como uma decisão só, porque é um <span class="gt-hl">hub 360º</span>.</strong></p>
         <p class="text-size-medium" lang="en" data-lang="en">Career, wealth and family: today, all of it depends on a single scenario. <strong>Amorim treats the three fronts as a single decision, because it is a <span class="gt-hl">360º hub</span>.</strong></p>
       </div>
@@ -4840,17 +4664,39 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
      As cenas de vida migraram para o bloco "O que acontece depois do endosso".
 ════════════════════════════════════════ -->
 <style>
-.gt-oque{background:#fff;}
-.gt-oque_inner{max-width:1180px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:start;}
+.gt-oque{background:var(--gt-tint);}
+.gt-oque_inner{display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:start;}
 .gt-oque_text .tag_text{color:#004DFF !important;}
 .gt-oque_text h2{color:#12193D !important;margin:18px 0 0;}
 .gt-oque_text p{color:#4a5062 !important;font-size:1.08rem;line-height:1.65;font-weight:400;margin:14px 0 0;}
 .gt-oque_media{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;max-height:520px;background:#042C53;}
 .gt-oque_media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-@media(max-width:860px){.gt-oque_inner{grid-template-columns:1fr;gap:32px;padding:64px 20px;}.gt-oque_media{aspect-ratio:16/10;max-height:none;}}
+@media(max-width:860px){.gt-oque_inner{grid-template-columns:1fr;gap:32px;}.gt-oque_media{aspect-ratio:16/10;max-height:none;}}
+
+/* Termo com explicação sob demanda. Não usa o title="" nativo (não funciona em toque
+   em boa parte dos navegadores mobile) — é um <button> real, então funciona com
+   hover no desktop e com toque/foco no mobile, sem JS. */
+.gt-term{position:relative;display:inline-block;font:inherit;color:inherit;background:none;border:none;padding:0;margin:0;border-bottom:1px dotted currentColor;cursor:help;}
+.gt-term_bubble{
+  position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(4px);
+  width:max-content;max-width:240px;background:var(--gt-ink);color:#fff;
+  font-size:0.8125rem;font-weight:500;line-height:1.45;text-align:left;
+  padding:0.6rem 0.85rem;border-radius:10px;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .15s ease, transform .15s ease;
+  z-index:5;
+}
+.gt-term_bubble::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--gt-ink);}
+.gt-term:hover .gt-term_bubble,
+.gt-term:focus-visible .gt-term_bubble,
+.gt-term:focus .gt-term_bubble{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
 </style>
 <div class="gt-oque">
-  <div class="gt-oque_inner">
+  <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
+    <div class="container-large">
+      <div class="gt-oque_inner">
     <div class="gt-oque_text" data-gsap="fade-up">
       <div class="tag">
         <div class="tag_dot"></div>
@@ -4864,12 +4710,14 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
       <p lang="en" data-lang="en">Global Talent is the route the United Kingdom created to attract those who already make a difference in their field. Instead of asking for a job offer, it asks for <span class="gt-hl">your story</span>. It is the most direct way to turn what you have built into a right to live and work in the country.</p>
       <p data-lang="pt">O governo britânico recebe candidaturas em três campos: academia e pesquisa, artes e cultura, ou tecnologia digital. A rota tem duas portas: talento, para quem já é nome reconhecido na sua área, e promessa, para quem mostra potencial claro de se tornar referência.</p>
       <p lang="en" data-lang="en">The UK government accepts applications in three fields: academia and research, arts and culture, or digital technology. The route has two doors: talent, for those already recognised in their field, and promise, for those who show clear potential to become a reference.</p>
-      <p data-lang="pt">Aprovado, você vive e trabalha no Reino Unido por até cinco anos por vez. E em três ou cinco anos, conforme o seu enquadramento, pode pedir a residência permanente (<abbr title="Indefinite Leave to Remain, a residência permanente britânica" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">ILR</abbr>), construindo uma vida no país e abrindo caminho para a cidadania britânica.</p>
-      <p lang="en" data-lang="en">Once approved, you live and work in the United Kingdom for up to five years at a time. And in three or five years, depending on your category, you can apply for permanent residence (<abbr title="Indefinite Leave to Remain, the UK permanent residence status" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">ILR</abbr>), building a life in the country and opening the path to British citizenship.</p>
+      <p data-lang="pt">Aprovado, você vive e trabalha no Reino Unido e segue o caminho para a residência permanente (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, a residência permanente britânica</span></button>), construindo uma vida no país e abrindo caminho para a cidadania britânica.</p>
+      <p lang="en" data-lang="en">Once approved, you live and work in the United Kingdom and follow the path to permanent residence (<button type="button" class="gt-term">ILR<span class="gt-term_bubble" role="tooltip">Indefinite Leave to Remain, the UK permanent residence status</span></button>), building a life in the country and opening the path to British citizenship.</p>
     </div>
     <!-- PLACEHOLDER: trocar pela foto definitiva do Reino Unido -->
     <div class="gt-oque_media" data-gsap="fade-up">
       <img src="https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=1100&q=80" alt="Reino Unido, Londres" loading="lazy"/>
+    </div>
+      </div>
     </div>
   </div>
 </div>
@@ -4903,8 +4751,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
           <blockquote class="lps-pathways-v2_callout" lang="en" data-lang="en">
             <span class="gt-hl-line">Your authority does not have to fit in one country.</span>
           </blockquote>
-          <p class="text-size-medium lps-pathways-v2_sub" data-lang="pt">Você não precisa ser uma figura pública, ocupar um cargo de chefia, ter prêmios ou aparecer na imprensa. É sobre traduzir o que você já construiu, mesmo nos bastidores, em uma narrativa que responde aos critérios de endosso, o reconhecimento oficial, por um órgão britânico autorizado, de que você é um talento na sua área.</p>
-          <p class="text-size-medium lps-pathways-v2_sub" lang="en" data-lang="en">You do not need to be a public figure, hold a management position, hold awards or appear in the press. It is about translating what you have already built, even behind the scenes, into a narrative that meets the endorsement criteria.</p>
+          <p class="text-size-medium lps-pathways-v2_sub" data-lang="pt">Você não precisa ser uma figura pública, ter prêmios ou aparecer na imprensa. Basta traduzir o que já construiu em uma narrativa que responde aos critérios de endosso, o reconhecimento oficial de que você é um talento na sua área.</p>
+          <p class="text-size-medium lps-pathways-v2_sub" lang="en" data-lang="en">You do not need to be a public figure, hold awards or appear in the press. Simply translate what you have already built into a narrative that meets the endorsement criteria, official recognition of your talent.</p>
         </div>
       </div>
 
@@ -4912,8 +4760,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
       <div class="lps-pathways-v2_tabs" role="tablist">
         <button class="lps-pathway-tab is-active" data-tab="tech" role="tab" aria-selected="true">
           <span class="lps-pathway-tab-title"><span data-lang-inline="pt">Tecnologia e negócios</span><span lang="en" data-lang-inline="en">Technology and business</span></span>
-          <span class="lps-pathway-tab-subtitle" data-lang-inline="pt">Founders e líderes em fintech, IA, gaming e cyber</span>
-          <span class="lps-pathway-tab-subtitle" lang="en" data-lang-inline="en">Founders and leaders in fintech, AI, gaming and cyber</span>
+          <span class="lps-pathway-tab-subtitle" data-lang-inline="pt">Founders e talentos em fintech, IA, gaming e cyber</span>
+          <span class="lps-pathway-tab-subtitle" lang="en" data-lang-inline="en">Founders and talents in fintech, AI, gaming and cyber</span>
         </button>
         <button class="lps-pathway-tab" data-tab="academia" role="tab" aria-selected="false">
           <span class="lps-pathway-tab-title"><span data-lang-inline="pt">Ciência, engenharia, medicina e humanidades</span><span lang="en" data-lang-inline="en">Science, engineering, medicine and humanities</span></span>
@@ -4922,8 +4770,8 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
         </button>
         <button class="lps-pathway-tab" data-tab="artes" role="tab" aria-selected="false">
           <span class="lps-pathway-tab-title"><span data-lang-inline="pt">Artes, cultura e arquitetura</span><span lang="en" data-lang-inline="en">Arts, culture and architecture</span></span>
-          <span class="lps-pathway-tab-subtitle" data-lang-inline="pt">Líderes em artes, moda, arquitetura, cinema e TV</span>
-          <span class="lps-pathway-tab-subtitle" lang="en" data-lang-inline="en">Leaders in arts, fashion, architecture, film and TV</span>
+          <span class="lps-pathway-tab-subtitle" data-lang-inline="pt">Destaques em artes, moda, arquitetura, cinema e TV</span>
+          <span class="lps-pathway-tab-subtitle" lang="en" data-lang-inline="en">Names of note in arts, fashion, architecture, film and TV</span>
         </button>
       </div>
 
@@ -5000,7 +4848,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 
       <!-- Vídeo do especialista, molde COMO FUNCIONA da LP Alemanha: header no topo + thumbnail largura total. CONFIRMAR rótulo e gravar vídeo definitivo -->
       <style>
-      .gt-video{grid-column:1 / -1;margin-top:64px;}
+      .gt-video{grid-column:1 / -1;margin-top:64px;background:var(--gt-offwhite);border-radius:24px;padding:56px 32px;}
       .gt-video_top{max-width:780px;margin:0 auto 36px;text-align:center;}
       .gt-video_top .tag{margin-left:auto;margin-right:auto;}
       .gt-video_top .tag_text{color:#004DFF !important;}
@@ -5013,7 +4861,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
       .gt-video_thumb-icon .gv-btn{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;transition:transform .2s ease;}
       .gt-video_thumb:hover .gv-btn{transform:scale(1.06);}
       .gt-video_thumb-icon .gv-cap{color:rgba(255,255,255,.85);font-size:11px;letter-spacing:.1em;text-transform:uppercase;}
-      @media(max-width:600px){.gt-video_thumb-icon .gv-btn{width:64px;height:64px;}}
+      @media(max-width:600px){.gt-video_thumb-icon .gv-btn{width:64px;height:64px;}.gt-video{padding:36px 20px;border-radius:16px;}}
       </style>
       <div class="gt-video">
         <div class="gt-video_top" data-gsap="fade-up">
@@ -5044,27 +4892,26 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 </div>
 
 <!-- ════════════════════════════════════════
-     ASIDE EB2 (mesmo design do CTA dos depoimentos)
+     ASIDE EB2 NIW — v3. A v2 (rotas em cards + seta) ficou com cara de
+     componente genérico de IA. Nova direção: nota editorial discreta,
+     sem card, sem fundo colorido, sem badges — hairlines finas em cima e
+     embaixo, texto corrido com um link inline no lugar de botão.
 ════════════════════════════════════════ -->
-<div class="padding-global-copy2" style="padding-top:8px;padding-bottom:8px;">
-  <div style="max-width:1000px;margin:0 auto;padding:0 24px;">
-    <div class="reviews-bottom-cta">
-      <div class="reviews-bottom-cta-text">
-        <p class="reviews-bottom-cta-eyebrow" data-lang="pt">Global Talent ou EB2 NIW</p>
-        <p class="reviews-bottom-cta-eyebrow" lang="en" data-lang="en">Global Talent or EB2 NIW</p>
-        <h3 class="reviews-bottom-cta-heading" data-lang="pt">Pensando também nos Estados Unidos?</h3>
-        <h3 class="reviews-bottom-cta-heading" lang="en" data-lang="en">Also considering the United States?</h3>
-        <p class="reviews-bottom-cta-sub" data-lang="pt">Para perfis parecidos, o EB2 NIW costuma entrar na conversa. São rotas diferentes, e a leitura do seu caso aponta com calma qual faz mais sentido para o seu momento.</p>
-        <p class="reviews-bottom-cta-sub" lang="en" data-lang="en">For similar profiles, the EB2 NIW often comes up. They are different routes, and a careful read of your case shows which one fits your moment.</p>
-      </div>
-      <a href="#section-form" class="sc-primary-button w-inline-block" style="flex-shrink:0;">
-        <div class="button-text" data-lang-inline="pt">Compare com o EB2 NIW</div>
-        <div class="button-text" lang="en" data-lang-inline="en">Compare with EB2 NIW</div>
-        <div class="button-text abs" data-lang-inline="pt">Compare com o EB2 NIW</div>
-        <div class="button-text abs" lang="en" data-lang-inline="en">Compare with EB2 NIW</div>
-        <div class="butt-arrow-wrp"><div class="button-arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M6 12.7278L10 8.72778L6 4.72778" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="button-arrow-embed abs w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M6 12.7278L10 8.72778L6 4.72778" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-    </div>
+<style>
+.gt-aside_inner{max-width:700px;margin:0 auto;padding:44px 24px;text-align:center;}
+.gt-aside_kicker{font-size:1.375rem;font-weight:800;letter-spacing:-0.01em;color:var(--gt-ink);margin:0 0 0.6rem;}
+.gt-aside_text{font-size:0.9375rem;color:var(--gt-ink-soft);line-height:1.6;margin:0;}
+.gt-aside_link{color:var(--gt-electric);font-weight:700;white-space:nowrap;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s ease;}
+.gt-aside_link:hover{border-color:var(--gt-electric);}
+.gt-aside_link i{font-size:0.85em;margin-left:2px;vertical-align:-0.05em;}
+@media(max-width:600px){.gt-aside_inner{padding:32px 20px;}}
+</style>
+<div class="gt-aside">
+  <div class="gt-aside_inner" data-gsap="fade-up">
+    <p class="gt-aside_kicker" data-lang="pt">Global Talent ou EB2 NIW</p>
+    <p class="gt-aside_kicker" lang="en" data-lang="en">Global Talent or EB2 NIW</p>
+    <p class="gt-aside_text" data-lang="pt">Pensando também nos Estados Unidos? Para perfis parecidos, o EB2 NIW costuma entrar na conversa como uma segunda rota possível. <a href="https://www.amorimglobal.com/eb2-niw" class="gt-aside_link">Comparar as duas rotas<i class="ph ph-arrow-right"></i></a></p>
+    <p class="gt-aside_text" lang="en" data-lang="en">Also considering the United States? For similar profiles, the EB2 NIW often comes up as a second possible route. <a href="https://www.amorimglobal.com/eb2-niw" class="gt-aside_link">Compare both routes<i class="ph ph-arrow-right"></i></a></p>
   </div>
 </div>
 
@@ -5138,19 +4985,36 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 </div>
 
 <!-- ════════════════════════════════════════
-     CITAÇÃO CEO, Giselle Amorim (mesmo design de CTA)
+     CITAÇÃO CEO, Giselle Amorim
+     v2: inset editorial assimétrico, fundo off-white tingido (não é mais um
+     bloco navy full-bleed de página inteira). Aspas gigantes em verde,
+     maiores que o texto, como elemento gráfico solto, não como caixa.
 ════════════════════════════════════════ -->
-<div class="padding-global-copy2" style="padding-top:8px;padding-bottom:8px;">
-  <div style="max-width:1000px;margin:0 auto;padding:0 24px;">
-    <div class="reviews-bottom-cta" style="padding-top:4rem;padding-bottom:4rem;">
-      <div class="reviews-bottom-cta-text">
-        <p class="reviews-bottom-cta-eyebrow" data-lang="pt">Palavra da CEO</p>
-        <p class="reviews-bottom-cta-eyebrow" lang="en" data-lang="en">From the CEO</p>
-        <h3 class="reviews-bottom-cta-heading" data-lang="pt" style="font-size:1.75rem;line-height:1.4;margin:0 0 1rem 0;">"Cada pessoa que nos procura carrega um sonho que não cabe em um formulário."</h3>
-        <h3 class="reviews-bottom-cta-heading" lang="en" data-lang="en" style="font-size:1.75rem;line-height:1.4;margin:0 0 1rem 0;">"Every person who comes to us carries a dream that no form can contain."</h3>
-        <p class="reviews-bottom-cta-sub" data-lang="pt" style="font-size:1.0625rem;color:oklch(85% 0.01 255);">Nossa diferença começa quando paramos de vender serviços e começamos a entender histórias. <strong style="color:#fff;">Giselle Amorim, CEO</strong>.</p>
-        <p class="reviews-bottom-cta-sub" lang="en" data-lang="en" style="font-size:1.0625rem;color:oklch(85% 0.01 255);">Our difference starts when we stop selling services and start understanding stories. <strong style="color:#fff;">Giselle Amorim, CEO</strong>.</p>
-      </div>
+<style>
+.gt-ceo{padding:28px 24px;}
+.gt-ceo_inner{display:grid;grid-template-columns:auto 1fr;gap:0 24px;align-items:start;max-width:700px;margin:0 auto;padding:20px 28px;}
+.gt-ceo_mark{font-family:Georgia,"Times New Roman",serif;font-size:6.5rem;line-height:0.6;color:var(--gt-neon);font-weight:700;transform:translateY(0.28em);user-select:none;}
+.gt-ceo_text{font-size:1.5rem;font-style:italic;font-weight:600;color:var(--gt-ink);line-height:1.45;letter-spacing:0.005em;margin:0 0 0.6rem;max-width:36ch;}
+.gt-ceo_sub{font-size:1rem;color:var(--gt-ink-soft);line-height:1.6;margin:0 0 0.6rem;max-width:44ch;}
+.gt-ceo_role{display:flex;align-items:center;gap:10px;font-size:0.8125rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--gt-ink);}
+.gt-ceo_role::before{content:'';width:20px;height:2px;background:var(--gt-neon);border-radius:2px;display:inline-block;}
+@media(max-width:600px){
+  .gt-ceo{padding:20px 20px;}
+  .gt-ceo_inner{grid-template-columns:1fr;gap:4px;padding:20px;}
+  .gt-ceo_mark{font-size:4.5rem;}
+  .gt-ceo_text{font-size:1.25rem;}
+}
+</style>
+<div class="gt-ceo">
+  <div class="gt-ceo_inner" data-gsap="fade-up">
+    <div class="gt-ceo_mark" aria-hidden="true">&ldquo;</div>
+    <div class="gt-ceo_body">
+      <p class="gt-ceo_text" data-lang="pt">Cada pessoa que nos procura carrega um sonho que não cabe em um formulário.</p>
+      <p class="gt-ceo_text" lang="en" data-lang="en">Every person who comes to us carries a dream that no form can contain.</p>
+      <p class="gt-ceo_sub" data-lang="pt">Nossa diferença começa quando paramos de vender serviços e começamos a entender histórias.</p>
+      <p class="gt-ceo_sub" lang="en" data-lang="en">Our difference starts when we stop selling services and start understanding stories.</p>
+      <p class="gt-ceo_role" data-lang="pt">Giselle Amorim, CEO</p>
+      <p class="gt-ceo_role" lang="en" data-lang="en">Giselle Amorim, CEO</p>
     </div>
   </div>
 </div>
@@ -5162,10 +5026,10 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
      Tom de domínio sobre o risco, não de medo. CSS autossuficiente.
 ════════════════════════════════════════ -->
 <style>
-.gt-riscos{background:#fff;}
+.gt-riscos{background:#F7F8FF;}
 .gt-riscos .gt-riscos_inner{max-width:1100px;margin:0 auto;padding:96px 24px;}
 .gt-riscos_head{max-width:760px;margin:0 auto 56px;text-align:center;}
-.gt-riscos_head .tag{margin-left:auto;margin-right:auto;}
+.gt-riscos_head .tag{margin-left:auto !important;margin-right:auto !important;}
 .gt-riscos_head .tag_text{color:#004DFF !important;}
 .gt-riscos_head h2{color:#12193D !important;margin:18px 0 0;}
 .gt-riscos_head p{color:#4a5062 !important;font-size:1.08rem;line-height:1.65;font-weight:400;margin:18px 0 0;}
@@ -5470,43 +5334,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
 </div>
 
 
-<!-- ════════════════════════════════════════
-     CTA INTERMEDIARIO (baixa friccao), logo abaixo do bloco de custo.
-     Converte quem acabou de ver o quadro de investimento.
-════════════════════════════════════════ -->
-<style>
-.gt-midcta { background: #F6F8FC; }
-.gt-midcta .lps-padding-vertical-copy2 { padding-top: 0 !important; }
-.gt-midcta_bar { max-width: 60rem; margin: 0 auto; background: #001A4D; border-radius: 1.25rem; padding: 1.75rem 2.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-.gt-midcta_text h3 { color: #FFFFFF; margin: 0 0 0.35rem; font-size: 1.35rem; }
-.gt-midcta_text p { color: #B9C6E6; margin: 0; font-size: 0.95rem; }
-.gt-midcta_bar .sc-primary-button { flex-shrink: 0; }
-@media (max-width: 767px) { .gt-midcta_bar { flex-direction: column; align-items: flex-start; padding: 1.5rem; } }
-</style>
-<div class="gt-midcta">
-  <div data-padding-section-vertical="both" class="padding-global-copy2 lps-padding-vertical-copy2">
-    <div class="container-large">
-      <div class="gt-midcta_bar" data-gsap="fade-up">
-        <div class="gt-midcta_text">
-          <h3 data-lang="pt">Quer ver o quadro de investimento do seu caso?</h3>
-          <h3 lang="en" data-lang="en">Want to see the investment picture for your case?</h3>
-          <p data-lang="pt">Uma conversa gratuita já mostra a via mais forte e o custo detalhado. Sem compromisso.</p>
-          <p lang="en" data-lang="en">A free conversation already shows the strongest route and the detailed cost. No commitment.</p>
-        </div>
-        <a href="#section-form" class="sc-primary-button w-inline-block">
-          <div class="button-text" data-lang-inline="pt">Avalie o meu perfil</div>
-          <div class="button-text" lang="en" data-lang-inline="en">Assess my profile</div>
-          <div class="button-text abs" data-lang-inline="pt">Avalie o meu perfil</div>
-          <div class="button-text abs" lang="en" data-lang-inline="en">Assess my profile</div>
-          <div class="butt-arrow-wrp">
-            <div class="button-arrow-embed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M6 12.7278L10 8.72778L6 4.72778" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="button-arrow-embed abs w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M6 12.7278L10 8.72778L6 4.72778" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- CTA intermediário removido a pedido do Pedro (redundante com o CTA final do formulário). -->
 
 
 <!-- ════════════════════════════════════════
@@ -5535,7 +5363,7 @@ a.lps-hero_trust-link:hover { text-decoration: underline; }
               <div class="tag_dot"></div>
             </div>
             <h2 class="heading-style-h2" data-lang="pt">Histórias de quem já fez o caminho</h2>
-            <h2 class="heading-style-h2" lang="en" data-lang="en">Stories from people who made Brazil their home</h2>
+            <h2 class="heading-style-h2" lang="en" data-lang="en">Stories from people who made the journey</h2>
             <p class="text-size-medium lps-reviews_subtitle" data-lang="pt">Histórias reais de pessoas que confiaram um sonho à Amorim Global, e viram acontecer.</p>
             <p class="text-size-medium lps-reviews_subtitle" lang="en" data-lang="en">Real stories from people who trusted Amorim Global with a dream, and watched it come true.</p>
           </div>
@@ -6975,7 +6803,7 @@ if (_CountUpLib && 'IntersectionObserver' in window) {
 .lps-benefits_header .text-size-medium { color: #4a5062; margin: 0; font-size: 1.125rem !important; font-weight: 400 !important; line-height: 1.6; font-family: Manrope, sans-serif; font-style: normal; }
 .lps-benefits_header .text-size-medium strong { color: #12193D; }
 .section_lps-benefits .tag { background: rgba(47,204,100,0.12); border-color: rgba(47,204,100,0.28); }
-.section_lps-benefits .tag .tag_text { color: #2FCC64; }
+.section_lps-benefits .tag .tag_text { color: #1A8F44 !important; }
 .section_lps-benefits .tag .tag_dot { background: #2FCC64; }
 .lps-benefits_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .section_lps-benefits .lps-layout3_card { background: #fff; border: 1px solid rgba(18,25,61,0.10); border-radius: 16px; padding: 2rem 1.75rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; box-shadow: 0 4px 18px rgba(18,25,61,0.06); transition: transform 0.18s ease, box-shadow 0.18s ease; }
@@ -6993,15 +6821,9 @@ if (_CountUpLib && 'IntersectionObserver' in window) {
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-/* ── 2 · CITACAO CEO: bloco compacto, aspas verdes como no guia AMORA, sem linha e sem curva ── */
-.section_lps-single-testimonial .lps-single-testimonial_svg { display: none !important; }
-.section_lps-single-testimonial .lps-padding-vertical-copy2 { padding-top: 2.25rem !important; padding-bottom: 2.25rem !important; }
-.section_lps-single-testimonial .lps-ceo-quote { gap: 0.5rem !important; }
-.section_lps-single-testimonial .lps-ceo-quote_text { font-size: 1.375rem !important; line-height: 1.5 !important; max-width: 46ch !important; }
-.section_lps-single-testimonial .lps-ceo-quote_text::before,
-.section_lps-single-testimonial .lps-ceo-quote_text::after { font-size: 2.25rem !important; color: #2FCC64 !important; }
-.section_lps-single-testimonial .lps-ceo-quote_sub { font-size: 0.9375rem !important; line-height: 1.55 !important; color: rgba(255,255,255,0.72) !important; max-width: 56ch !important; margin-top: 0.125rem; }
-.section_lps-single-testimonial .lps-single-testimonial_client { margin-top: 0.875rem; gap: 0.25rem; }
+/* ── 2 · CITACAO CEO: ver .gt-ceo (inset editorial). Regras antigas de
+   .section_lps-single-testimonial/.lps-ceo-quote removidas — nunca havia
+   marcação correspondente no HTML desta LP. ── */
 
 /* ── 3 · ESCALA TIPOGRAFICA UNICA ── */
 .lps-hero_rich-text h1 { font-size: clamp(2.25rem, 4.2vw, 3.25rem) !important; line-height: 1.12 !important; }
@@ -7011,6 +6833,10 @@ html { scroll-behavior: smooth; }
 /* ── 4 · RITMO VERTICAL UNICO ── */
 .lps-padding-vertical-copy2 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
 @media (max-width: 767px) { .lps-padding-vertical-copy2 { padding-top: 2rem !important; padding-bottom: 2rem !important; } }
+
+/* ── 5 · ESTATÍSTICAS: revertido para o original nesta revisão (v2).
+   Pedro não gostou da lista editorial — o bloco de cards com borda de
+   acento e sombra volta a ser exatamente como no Index.html. ── */
 </style>
 
 </body>
